@@ -18,7 +18,6 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
     private var viewModel: ScheduleTableViewControllerModel!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         self.viewModel = ScheduleTableViewControllerModel()
@@ -30,6 +29,24 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
         
         self.attach(table: mainTableView, toDelegate: self, andDataSource: self)
         self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
+        
+        // Add button overlay for map
+        let mapIconImage = UIImage(named: "mapIcon")
+        let viewHeight: CGFloat = self.view.frame.height
+        let viewWidth: CGFloat = self.view.frame.width
+        let buttonSize: CGFloat = 70
+        let button = UIButton(frame: CGRect(origin: CGPoint(x: viewWidth-buttonSize-30, y: viewHeight-buttonSize-30), size: CGSize(width: buttonSize, height: buttonSize)))
+        button.backgroundColor = UIColor.white
+        button.setBackgroundImage(mapIconImage, for: UIControl.State.normal)
+        button.layer.cornerRadius = buttonSize/2
+        button.clipsToBounds = true
+        button.layer.masksToBounds = false
+        button.layer.shadowColor = UIColor.gray.cgColor
+        button.layer.shadowOpacity = 0.8
+        button.layer.shadowRadius = 12
+        button.layer.shadowOffset = CGSize(width: 12.0, height: 12.0)
+        button.addTarget(self, action: #selector(self.buttonClicked(_ :)), for: .touchUpInside)
+        self.navigationController?.view.addSubview(button)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,6 +55,18 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
     
     override func viewWillAppear(_ animated: Bool) {
         self.viewModel.fetchScheduleData()
+    }
+    
+    // Map button press event
+    @objc func buttonClicked(_ button: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController")
+        
+        // Remove button
+        button.removeFromSuperview()
+        
+        // Navigate to map view controller
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     // MARK: - Filter Delegate

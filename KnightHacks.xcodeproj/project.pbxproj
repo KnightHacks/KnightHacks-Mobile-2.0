@@ -80,6 +80,8 @@
 		E51F74D9234113C8000AC727 /* CodableFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F74D8234113C8000AC727 /* CodableFilterModel.swift */; };
 		E53B747D235E3D4C0022264E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53B747C235E3D4C0022264E /* ProfileViewController.swift */; };
 		E53B747F235E3F990022264E /* ProfileViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53B747E235E3F990022264E /* ProfileViewControllerModel.swift */; };
+		E5FEB25C23788BAB004CFDEE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FEB25B23788BAB004CFDEE /* MapViewController.swift */; };
+		E5FEB25E23788D5A004CFDEE /* MapViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FEB25D23788D5A004CFDEE /* MapViewControllerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +181,8 @@
 		E51F74D8234113C8000AC727 /* CodableFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFilterModel.swift; sourceTree = "<group>"; };
 		E53B747C235E3D4C0022264E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E53B747E235E3F990022264E /* ProfileViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerModel.swift; sourceTree = "<group>"; };
+		E5FEB25B23788BAB004CFDEE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E5FEB25D23788D5A004CFDEE /* MapViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +315,7 @@
 				4C367A9F22E578AA0006CD2F /* LiveUpdatesTableViewController.swift */,
 				4C40CA0A22EE63A600ECD930 /* FrequentlyAskedViewController.swift */,
 				E53B747C235E3D4C0022264E /* ProfileViewController.swift */,
+				E5FEB25B23788BAB004CFDEE /* MapViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				4C73CD1122EAA41D002B678A /* LiveUpdateTableViewControllerModel.swift */,
 				4C38E45F22EF3EDA00FC3506 /* FrequentlyAskedViewControllerModel.swift */,
 				E53B747E235E3F990022264E /* ProfileViewControllerModel.swift */,
+				E5FEB25D23788D5A004CFDEE /* MapViewControllerModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -650,6 +656,7 @@
 				4CD3E3A422EE2452007E756E /* SponsorsTableViewController.swift in Sources */,
 				4C40CA0D22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift in Sources */,
 				4CCA072722C5BAA600ABD8CB /* WorkshopTableViewController.swift in Sources */,
+				E5FEB25C23788BAB004CFDEE /* MapViewController.swift in Sources */,
 				4C367A9C22E555660006CD2F /* HeaderDataSource.swift in Sources */,
 				4CEDF56C22C03BCC0025EF47 /* FilterCollectionView.swift in Sources */,
 				4C73CD0C22EA8429002B678A /* WorkshopModel.swift in Sources */,
@@ -675,6 +682,7 @@
 				4CEDF56A22C022B10025EF47 /* ScheduleTableViewController.swift in Sources */,
 				4C22AFE222C6DA2900FA99BB /* WorkshopTableViewCell.swift in Sources */,
 				4C367AA422E57C490006CD2F /* NavigationBarViewControllerExtension.swift in Sources */,
+				E5FEB25E23788D5A004CFDEE /* MapViewControllerModel.swift in Sources */,
 				4C3401BA22C001B200432D80 /* MenuTableViewCell.swift in Sources */,
 				4CD3E3A822EE3A4A007E756E /* SponsorModel.swift in Sources */,
 				4C29A7CF22C014EF00C113A9 /* HomeMenuModel.swift in Sources */,
@@ -858,7 +866,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6ZP44KGTKT;
 				INFOPLIST_FILE = KnightHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -876,7 +884,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6ZP44KGTKT;
 				INFOPLIST_FILE = KnightHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -2,7 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>liveUpdatesMenuColor</key>
+	<integer>359167</integer>
+	<key>sponsorsMenuColor</key>
+	<integer>5723606</integer>
+	<key>workshopsMenuColor</key>
+	<real>16726833</real>
+	<key>faqsMenuColor</key>
+	<real>2535008</real>
+	<key>scheduleMenuColor</key>
+	<real>16749824</real>
+	<key>navigationBarColor</key>
+	<real>16726833</real>
 	<key>backgroundColor</key>
-	<string>5755D6</string>
+	<integer>2427217</integer>
 </dict>
 </plist>

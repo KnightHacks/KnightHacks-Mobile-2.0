@@ -18,6 +18,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         QRImage.image = UIImage(named: "Sample_QR_Code")
     }
     

@@ -17,16 +17,22 @@ internal class LiveUpdatesTableViewController: NavigationBarTableViewController,
     private var liveCountDownView: LiveCountdownView!
     private var viewModel: LiveUpdateTableViewControllerModel!
     private var rocketRefreshControlView: RocketRefreshControlView!
-
+    private var color: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Get respective color from plist.
+        if let path = Bundle.main.path(forResource: "UIConfigurationList", ofType: "plist") {
+            color = NSDictionary(contentsOfFile: path)!["liveUpdatesMenuColor"] as! Int
+        }
         
         self.viewModel = LiveUpdateTableViewControllerModel()
         self.viewModel.observer = self
         
         self.initLiveCountDown()
         self.navigationItem.largeTitleDisplayMode = .never
-        self.colorUpper(view: tableView, with: BACKGROUND_COLOR)
+        self.colorUpper(view: tableView, with: UIColor(hex: color, alpha: 1.0))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +40,7 @@ internal class LiveUpdatesTableViewController: NavigationBarTableViewController,
         
         self.attachRefreshControl()
         self.viewModel.fetchRecent()
-        self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
+        self.add(navigationController: navigationController, and: navigationItem, with: UIColor(hex: color, alpha: 1.0))
         
         self.liveCountDownView.targetEndDate = Date(timeIntervalSinceNow: 45) // dummy time
     }

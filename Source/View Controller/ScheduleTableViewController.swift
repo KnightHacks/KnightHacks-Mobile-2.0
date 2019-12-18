@@ -16,6 +16,7 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
     
     private var filterCollectionView: FilterCollectionView!
     private var viewModel: ScheduleTableViewControllerModel!
+    private var color: Int = 0
     
     override func viewDidLoad() {
         
@@ -24,12 +25,17 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
         self.viewModel = ScheduleTableViewControllerModel()
         self.viewModel.observer = self
         
-        self.colorUpper(view: mainTableView, with: BACKGROUND_COLOR)
+        // Get respective color from plist.
+        if let path = Bundle.main.path(forResource: "UIConfigurationList", ofType: "plist") {
+            color = NSDictionary(contentsOfFile: path)!["scheduleMenuColor"] as! Int
+        }
+        
+        self.colorUpper(view: mainTableView, with: UIColor(hex: color, alpha: 1.0))
         self.filterCollectionView = addFilterCollectionView(to: mainTableView, datasource: viewModel)
         self.viewModel.filterCollectionView = self.filterCollectionView
         
         self.attach(table: mainTableView, toDelegate: self, andDataSource: self)
-        self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
+        self.add(navigationController: navigationController, and: navigationItem, with: UIColor(hex: color, alpha: 1.0))
     }
     
     override func viewDidAppear(_ animated: Bool) {

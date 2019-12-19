@@ -14,24 +14,18 @@ internal class SponsorsTableViewController: NavigationBarTableViewController, Na
     
     private var filterCollectionView: FilterCollectionView!
     private var viewModel: SponsorTableViewControllerModel!
-    private var color: Int = 0
     
     var filters: [FilterMenuModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Get respective color from plist.
-        if let path = Bundle.main.path(forResource: "UIConfigurationList", ofType: "plist") {
-            color = NSDictionary(contentsOfFile: path)!["sponsorsMenuColor"] as! Int
-        }
-        
         self.viewModel = SponsorTableViewControllerModel()
         self.viewModel.observer = self
         self.filters = viewModel.filters
         
         self.navigationItem.largeTitleDisplayMode = .never
-        self.colorUpper(view: tableView, with: UIColor(hex: color, alpha: 1.0))
+        self.colorUpper(view: tableView, with: BACKGROUND_COLOR)
         self.filterCollectionView = addFilterCollectionView(to: tableView, datasource: self.viewModel)
         self.viewModel.filterCollectionView = self.filterCollectionView
     }
@@ -39,7 +33,7 @@ internal class SponsorsTableViewController: NavigationBarTableViewController, Na
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel.fetchSponsorData()
-        self.add(navigationController: navigationController, and: navigationItem, with: UIColor(hex: color, alpha: 1.0))
+        self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
     }
     
     override func viewDidAppear(_ animated: Bool) {

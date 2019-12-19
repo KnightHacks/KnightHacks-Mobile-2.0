@@ -26,6 +26,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let backgroundColorHex = UIConfigurationList[ColorSchemeName.backgroundColor.rawValue] as? String, let intValue = Int(backgroundColorHex, radix: 16) {
             BACKGROUND_COLOR = UIColor(hex: intValue, alpha: 1)
         }
+        
+        if let scheduleColorHex = UIConfigurationList[ColorSchemeName.scheduleMenuColor.rawValue] as? String, let intValue = Int(scheduleColorHex, radix: 16) {
+            SCHEDULE_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+            
+        }
+        
+        if let liveUpdatesColorHex = UIConfigurationList[ColorSchemeName.liveUpdatesMenuColor.rawValue] as? String, let intValue = Int(liveUpdatesColorHex, radix: 16) {
+            LIVE_UPDATES_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
+        if let faqsColorHex = UIConfigurationList[ColorSchemeName.faqsMenuColor.rawValue] as? String, let intValue = Int(faqsColorHex, radix: 16) {
+            FAQS_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
+        if let workshopsColorHex = UIConfigurationList[ColorSchemeName.workshopsMenuColor.rawValue] as? String, let intValue = Int(workshopsColorHex, radix: 16) {
+            WORKSHOPS_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
+        if let sponsorsColorHex = UIConfigurationList[ColorSchemeName.sponsorsMenuColor.rawValue] as? String, let intValue = Int(sponsorsColorHex, radix: 16) {
+            SPONSORS_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
+        if let profileColorHex = UIConfigurationList[ColorSchemeName.profileMenuColor.rawValue] as? String, let intValue = Int(profileColorHex, radix: 16) {
+            PROFILE_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
     }
     
     func getPlist(withName name: String) -> [String:Any]? {

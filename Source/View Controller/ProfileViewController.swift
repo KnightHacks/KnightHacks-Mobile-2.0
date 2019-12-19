@@ -18,14 +18,13 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         QRImage.image = UIImage(named: "Sample_QR_Code")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
                 
-        self.add(navigationController: navigationController, and: navigationItem, with: BLUE_COLOR)
+        self.add(navigationController: navigationController, and: navigationItem, with: PROFILE_MENU_COLOR)
         updateNavigationTitle()
     }
     

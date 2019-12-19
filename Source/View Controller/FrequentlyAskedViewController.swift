@@ -13,20 +13,14 @@ internal class FrequentlyAskedViewController: NavigationBarTableViewController, 
     internal static let identifier: String = "FrequentlyAskedTableViewController"
     
     private var viewModel: FrequentlyAskedViewControllerModel!
-    private var color: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Get respective color from plist.
-        if let path = Bundle.main.path(forResource: "UIConfigurationList", ofType: "plist") {
-            color = NSDictionary(contentsOfFile: path)!["faqsMenuColor"] as! Int
-        }
-        
         viewModel = FrequentlyAskedViewControllerModel()
         viewModel.observer = self
         
-        self.colorUpper(view: tableView, with: UIColor(hex: color, alpha: 1.0))
+        self.colorUpper(view: tableView, with: BACKGROUND_COLOR)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +28,7 @@ internal class FrequentlyAskedViewController: NavigationBarTableViewController, 
         
         self.viewModel.fetchFrequentlyAskedData()
         
-        self.add(navigationController: navigationController, and: navigationItem, with: UIColor(hex: color, alpha: 1.0))
+        self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
         self.updateNavigationTitle()
     }
     

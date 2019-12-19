@@ -763,42 +763,90 @@
         <!--MapViewController-->
         <scene sceneID="wef-fS-M3z">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" title="MapViewController" id="Qoh-Az-HHF" customClass="MapViewController" customModule="KnightHacks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" title="MapViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="Qoh-Az-HHF" customClass="MapViewController" customModule="KnightHacks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KEj-1e-E4J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-5j-hx1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="aLc-oN-X6a">
+                                <rect key="frame" x="50" y="94" width="314" height="718"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="uiU-Ky-iWI" userLabel="Map Image">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    </imageView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-5j-hx1">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="568"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJk-eL-a3c">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="568"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="UbI-DF-s4q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="594"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="tJk-eL-a3c" firstAttribute="height" secondItem="8kB-5j-hx1" secondAttribute="height" id="Ech-xO-bwb"/>
+                                            <constraint firstItem="tJk-eL-a3c" firstAttribute="width" secondItem="8kB-5j-hx1" secondAttribute="width" id="R3c-SR-6RI"/>
+                                            <constraint firstItem="tJk-eL-a3c" firstAttribute="top" secondItem="8kB-5j-hx1" secondAttribute="top" id="U2n-9F-J2i"/>
+                                            <constraint firstItem="tJk-eL-a3c" firstAttribute="leading" secondItem="8kB-5j-hx1" secondAttribute="leading" id="fR9-W9-ntW"/>
+                                            <constraint firstAttribute="bottom" secondItem="tJk-eL-a3c" secondAttribute="bottom" constant="-26" id="gK5-0e-Wpl"/>
+                                            <constraint firstAttribute="trailing" secondItem="tJk-eL-a3c" secondAttribute="trailing" id="pAG-51-7lB"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Qoh-Az-HHF" id="Td9-hF-5cT"/>
+                                        </connections>
+                                    </scrollView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXB-bx-IzW">
+                                        <rect key="frame" x="0.0" y="593" width="314" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="OMk-P4-U9M"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Zoom In"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZl-uy-YQ0">
+                                        <rect key="frame" x="0.0" y="668" width="314" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="KuR-f1-ZnL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Close"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="closeButton:" destination="Qoh-Az-HHF" eventType="touchUpInside" id="hQo-rb-BaY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="uiU-Ky-iWI" secondAttribute="trailing" id="3fd-2N-xtk"/>
-                                    <constraint firstItem="uiU-Ky-iWI" firstAttribute="top" secondItem="8kB-5j-hx1" secondAttribute="top" id="6ks-po-76N"/>
-                                    <constraint firstItem="uiU-Ky-iWI" firstAttribute="leading" secondItem="8kB-5j-hx1" secondAttribute="leading" id="HrD-oY-AsX"/>
-                                    <constraint firstItem="uiU-Ky-iWI" firstAttribute="centerX" secondItem="8kB-5j-hx1" secondAttribute="centerX" id="VtP-Ql-mFo"/>
-                                    <constraint firstItem="uiU-Ky-iWI" firstAttribute="centerY" secondItem="8kB-5j-hx1" secondAttribute="centerY" id="g6O-Q5-rsX"/>
-                                    <constraint firstAttribute="bottom" secondItem="uiU-Ky-iWI" secondAttribute="bottom" id="utC-bJ-bhp"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="Qoh-Az-HHF" id="Td9-hF-5cT"/>
-                                </connections>
-                            </scrollView>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8kB-5j-hx1" firstAttribute="top" secondItem="KEj-1e-E4J" secondAttribute="top" id="CYr-Nt-tSN"/>
-                            <constraint firstAttribute="trailing" secondItem="8kB-5j-hx1" secondAttribute="trailing" id="GkT-qb-oZe"/>
-                            <constraint firstAttribute="bottom" secondItem="8kB-5j-hx1" secondAttribute="bottom" id="QTe-QB-7d3"/>
-                            <constraint firstItem="8kB-5j-hx1" firstAttribute="leading" secondItem="KEj-1e-E4J" secondAttribute="leading" id="Zg8-4N-7j4"/>
+                            <constraint firstItem="eH9-vm-StB" firstAttribute="bottom" secondItem="aLc-oN-X6a" secondAttribute="bottom" constant="50" id="L1D-2n-KdU"/>
+                            <constraint firstItem="eH9-vm-StB" firstAttribute="trailing" secondItem="aLc-oN-X6a" secondAttribute="trailing" constant="50" id="Wcy-Da-aqg"/>
+                            <constraint firstItem="aLc-oN-X6a" firstAttribute="leading" secondItem="eH9-vm-StB" secondAttribute="leading" constant="50" id="bmP-EV-dQf"/>
+                            <constraint firstItem="aLc-oN-X6a" firstAttribute="top" secondItem="eH9-vm-StB" secondAttribute="top" constant="50" id="qB9-mD-Beh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eH9-vm-StB"/>
                     </view>
                     <connections>
-                        <outlet property="mapImage" destination="uiU-Ky-iWI" id="NRg-jh-tmE"/>
+                        <outlet property="mapImage" destination="UbI-DF-s4q" id="rjI-Ez-zMW"/>
                         <outlet property="scrollView" destination="8kB-5j-hx1" id="tMa-QM-gp5"/>
                     </connections>
                 </viewController>

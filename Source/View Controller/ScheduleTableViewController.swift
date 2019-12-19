@@ -29,24 +29,6 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
         
         self.attach(table: mainTableView, toDelegate: self, andDataSource: self)
         self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
-        
-        // Add button overlay for map
-        let mapIconImage = UIImage(named: "mapIcon")
-        let viewHeight: CGFloat = self.view.frame.height
-        let viewWidth: CGFloat = self.view.frame.width
-        let buttonSize: CGFloat = 70
-        let button = UIButton(frame: CGRect(origin: CGPoint(x: viewWidth-buttonSize-30, y: viewHeight-buttonSize-30), size: CGSize(width: buttonSize, height: buttonSize)))
-        button.backgroundColor = UIColor.white
-        button.setBackgroundImage(mapIconImage, for: UIControl.State.normal)
-        button.layer.cornerRadius = buttonSize/2
-        button.clipsToBounds = true
-        button.layer.masksToBounds = false
-        button.layer.shadowColor = UIColor.gray.cgColor
-        button.layer.shadowOpacity = 0.8
-        button.layer.shadowRadius = 12
-        button.layer.shadowOffset = CGSize(width: 12.0, height: 12.0)
-        button.addTarget(self, action: #selector(self.buttonClicked(_ :)), for: .touchUpInside)
-        self.navigationController?.view.addSubview(button)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -112,6 +94,18 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
         
         cell.model = viewModel.viewContent[indexPath.section][indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destinationID = "MapViewController"
+        
+        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: destinationID) as? MapViewController
+            else {
+                print("ERROR: View controller not found")
+                return
+        }
+        
+        present(mapViewController, animated: true, completion: nil)
     }
     
     // MARK: - View model delegate

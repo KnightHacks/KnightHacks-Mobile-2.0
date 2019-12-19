@@ -13,6 +13,10 @@ internal class MapViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+
+    @IBAction func closeButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

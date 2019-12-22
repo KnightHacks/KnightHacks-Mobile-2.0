@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         updateApplicationFilters()
         setupNotifications(application)
         removeNotificationBadge(application)
+        startLaunchAnimation()
         return true
     }
     
@@ -67,6 +68,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
+    func startLaunchAnimation() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = AnimationHolder(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible()
+    }
     
     // MARK: - UI Override
     

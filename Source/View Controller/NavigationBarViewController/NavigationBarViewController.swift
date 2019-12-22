@@ -29,10 +29,6 @@ public class NavigationBarViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = .white
     }
     
-    override public var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     public func addBackgroundView(to tableView: UITableView, using content: [Any]) {
         if content.isEmpty && viewHasAppeared == true {
             let background = EmptyTableBackgroundView(frame: tableView.frame)

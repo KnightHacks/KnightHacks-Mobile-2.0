@@ -41,7 +41,7 @@ internal class SponsorsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         nameLabel.font = TITLE_FONT
-        nameLabel.textColor = SPONSORS_MENU_COLOR
+        nameLabel.textColor = BACKGROUND_COLOR
         descriptionLabel.font = PARAGRAPH_FONT
         addSpecifiedShadow(customBackgroundView)
     }

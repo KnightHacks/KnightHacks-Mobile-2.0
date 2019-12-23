@@ -45,6 +45,9 @@
 		4C40CA0D22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40CA0C22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift */; };
 		4C48BF2D22E8023D00C9C764 /* LiveCountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C48BF2C22E8023D00C9C764 /* LiveCountdownView.xib */; };
 		4C48BF2F22E8051B00C9C764 /* LiveCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48BF2E22E8051B00C9C764 /* LiveCountdownView.swift */; };
+		4C63DEC323AFF2AB003FD5EF /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63DEC223AFF2AB003FD5EF /* AnimationViewController.swift */; };
+		4C63DEC623AFF574003FD5EF /* light-launch-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C63DEC523AFF574003FD5EF /* light-launch-animation.json */; };
+		4C63DEC823AFF84A003FD5EF /* dark-launch-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C63DEC723AFF84A003FD5EF /* dark-launch-animation.json */; };
 		4C73CD0A22EA837F002B678A /* WorkshopTableViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C73CD0922EA837F002B678A /* WorkshopTableViewControllerModel.swift */; };
 		4C73CD0C22EA8429002B678A /* WorkshopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C73CD0B22EA8429002B678A /* WorkshopModel.swift */; };
 		4C73CD1022EAA18F002B678A /* LiveUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C73CD0F22EAA18F002B678A /* LiveUpdateModel.swift */; };
@@ -156,6 +159,9 @@
 		4C40CA0C22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedTableViewCell.swift; sourceTree = "<group>"; };
 		4C48BF2C22E8023D00C9C764 /* LiveCountdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCountdownView.xib; sourceTree = "<group>"; };
 		4C48BF2E22E8051B00C9C764 /* LiveCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCountdownView.swift; sourceTree = "<group>"; };
+		4C63DEC223AFF2AB003FD5EF /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		4C63DEC523AFF574003FD5EF /* light-launch-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "light-launch-animation.json"; sourceTree = "<group>"; };
+		4C63DEC723AFF84A003FD5EF /* dark-launch-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dark-launch-animation.json"; sourceTree = "<group>"; };
 		4C73CD0922EA837F002B678A /* WorkshopTableViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopTableViewControllerModel.swift; sourceTree = "<group>"; };
 		4C73CD0B22EA8429002B678A /* WorkshopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopModel.swift; sourceTree = "<group>"; };
 		4C73CD0F22EAA18F002B678A /* LiveUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveUpdateModel.swift; sourceTree = "<group>"; };
@@ -360,6 +366,7 @@
 				4C367A9F22E578AA0006CD2F /* LiveUpdatesTableViewController.swift */,
 				4C40CA0A22EE63A600ECD930 /* FrequentlyAskedViewController.swift */,
 				E53B747C235E3D4C0022264E /* ProfileViewController.swift */,
+				4C63DEC223AFF2AB003FD5EF /* AnimationViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -381,6 +388,7 @@
 		4C3401B822BFFEFD00432D80 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C63DEC423AFF55F003FD5EF /* Animations */,
 				4CE41D0922C56058008836DC /* Fonts */,
 				4C02FFE222C2F44600FC700C /* Views */,
 				4C02FFE122C2F43A00FC700C /* Cells */,
@@ -465,6 +473,15 @@
 				4C9B1ED723ABD26B003FB507 /* DictionaryCodable.swift */,
 			);
 			path = "Model Protocols";
+			sourceTree = "<group>";
+		};
+		4C63DEC423AFF55F003FD5EF /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				4C63DEC723AFF84A003FD5EF /* dark-launch-animation.json */,
+				4C63DEC523AFF574003FD5EF /* light-launch-animation.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		4C7E1E7E22F646B500416BDC /* Service */ = {
@@ -667,6 +684,7 @@
 				4C34019122BFFB2B00432D80 /* LaunchScreen.storyboard in Resources */,
 				4CE41D1C22C56058008836DC /* Lato-BoldItalic.ttf in Resources */,
 				4CE41D1B22C56058008836DC /* Lato-BlackItalic.ttf in Resources */,
+				4C63DEC623AFF574003FD5EF /* light-launch-animation.json in Resources */,
 				4CB743892381A8720072AFDA /* UIConfigurationList.plist in Resources */,
 				4C34018E22BFFB2B00432D80 /* Assets.xcassets in Resources */,
 				4C02FFDC22C2DC0900FC700C /* FilterCollectionViewCell.xib in Resources */,
@@ -675,6 +693,7 @@
 				4CE41D2122C567DE008836DC /* FilterTableHeaderView.xib in Resources */,
 				4CE41D1522C56058008836DC /* Lato-LightItalic.ttf in Resources */,
 				4CE41D1622C56058008836DC /* Lato-Bold.ttf in Resources */,
+				4C63DEC823AFF84A003FD5EF /* dark-launch-animation.json in Resources */,
 				4CE41D1922C56058008836DC /* Lato-Regular.ttf in Resources */,
 				4C2670D123410492002331EF /* GoogleService-Info.plist in Resources */,
 				4C2EE7CA22F630D9008C97AF /* EmptyTableBackgroundView.xib in Resources */,
@@ -803,6 +822,7 @@
 				4C29A7D422C0180400C113A9 /* Colors.swift in Sources */,
 				4C367AA022E578AA0006CD2F /* LiveUpdatesTableViewController.swift in Sources */,
 				4C367A9822E554EB0006CD2F /* HeaderContentViewModel.swift in Sources */,
+				4C63DEC323AFF2AB003FD5EF /* AnimationViewController.swift in Sources */,
 				4C38E45E22EF3E0400FC3506 /* FrequentlyAskedModel.swift in Sources */,
 				4CDF966E235D4F7B00D53156 /* RuntimeExceptions.swift in Sources */,
 				E53B747F235E3F990022264E /* ProfileViewControllerModel.swift in Sources */,
@@ -1036,7 +1056,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1058,7 +1078,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

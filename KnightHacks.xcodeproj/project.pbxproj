@@ -1046,13 +1046,13 @@
 				CODE_SIGN_ENTITLEMENTS = KnightHacks/KnightHacks.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UMPLM5DFZC;
 				INFOPLIST_FILE = KnightHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = knighthacks.KnightHacks;
+				PRODUCT_BUNDLE_IDENTIFIER = knighthacks.KnightHacksn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1068,13 +1068,13 @@
 				CODE_SIGN_ENTITLEMENTS = KnightHacks/KnightHacks.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UMPLM5DFZC;
 				INFOPLIST_FILE = KnightHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = knighthacks.KnightHacks;
+				PRODUCT_BUNDLE_IDENTIFIER = knighthacks.KnightHacksn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

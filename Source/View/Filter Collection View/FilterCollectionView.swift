@@ -92,7 +92,7 @@ public class FilterCollectionView: UIView, UICollectionViewDelegate, UICollectio
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: FilterCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: FilterCollectionViewCell.identifier)
-        collectionView.backgroundColor = selectedCellColor(selectedController: AppDelegate.selectedCellId)
+        collectionView.backgroundColor = BACKGROUND_COLOR
         collectionView.reloadData()
     }
     
@@ -119,30 +119,11 @@ public class FilterCollectionView: UIView, UICollectionViewDelegate, UICollectio
             return UICollectionViewCell(frame: FilterCollectionView.minimumCellFrame)
         }
         cell.model = source.filters[indexPath.row]
-        cell.backgroundColor = selectedCellColor(selectedController: AppDelegate.selectedCellId)
+        cell.backgroundColor = BACKGROUND_COLOR
         
         return cell
     }
-    
-    public func selectedCellColor(selectedController: String) -> UIColor {
-        
-        switch selectedController {
-        case "ScheduleTableViewController":
-            return SCHEDULE_MENU_COLOR
-        case "WorkshopTableViewController":
-            return WORKSHOPS_MENU_COLOR
-        case "SponsorsTableViewController":
-            return SPONSORS_MENU_COLOR
-        case "LiveUpdatesTableViewController":
-            return LIVE_UPDATES_MENU_COLOR
-        case "FrequentlyAskedTableViewController":
-            return FAQS_MENU_COLOR
-        case "ProfileViewController":
-            return PROFILE_MENU_COLOR
-        default:
-            return BACKGROUND_COLOR
-        }
-    }
+
 //    public final func reloadData() {
 //        guard let !filters.isEmpty else { return }
 //

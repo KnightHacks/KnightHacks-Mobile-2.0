@@ -107,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         if let profileMenuColorHex = UIConfigurationList[ColorSchemeName.profileMenuColor.rawValue] as? String, let intValue = Int(profileMenuColorHex, radix: 16) {
-            FAQS_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+            PROFILE_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
         }
         
     }

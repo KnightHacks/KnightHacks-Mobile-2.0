@@ -18,6 +18,6 @@ internal struct HomeTableViewControllerModel {
         HomeMenuModel(title: "FAQs", color: FAQS_MENU_COLOR, viewControllerID: FrequentlyAskedViewController.identifier),
         HomeMenuModel(title: "Workshops", color: WORKSHOPS_MENU_COLOR, viewControllerID: WorkshopTableViewController.identifier),
         HomeMenuModel(title: "Sponsors", color: SPONSORS_MENU_COLOR, viewControllerID: SponsorsTableViewController.identifier),
-        HomeMenuModel(title: "Profile", color: BLUE_COLOR, viewControllerID: ProfileViewController.identifier)
+        HomeMenuModel(title: "Profile", color: PROFILE_MENU_COLOR, viewControllerID: ProfileViewController.identifier)
     ]
 }

@@ -68,9 +68,9 @@ public class LiveCountdownView: UIView {
     private func initView() {
         Bundle.main.loadNibNamed(LiveCountdownView.nibName, owner: self, options: nil)
         addSubview(contentView)
-        backgroundColor = LIVE_UPDATES_MENU_COLOR
+        backgroundColor = BACKGROUND_COLOR
         contentView.frame = bounds
-        contentView.backgroundColor = LIVE_UPDATES_MENU_COLOR
+        contentView.backgroundColor = BACKGROUND_COLOR
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     

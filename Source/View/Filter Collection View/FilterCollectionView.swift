@@ -30,7 +30,6 @@ public protocol FilterCollectionViewDelegate {
 public class FilterCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public static let nibName: String = "FilterCollectionView"
-    let AppDelegate = UIApplication.shared.delegate as! AppDelegate
     public static let minimumRequiredHeight: CGFloat = 115
     public static let minimumRequiredWidth: CGFloat = 85
     public static let minimumCellFrame: CGRect = CGRect(

@@ -45,8 +45,8 @@
 		4C40CA0D22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40CA0C22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift */; };
 		4C48BF2D22E8023D00C9C764 /* LiveCountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C48BF2C22E8023D00C9C764 /* LiveCountdownView.xib */; };
 		4C48BF2F22E8051B00C9C764 /* LiveCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48BF2E22E8051B00C9C764 /* LiveCountdownView.swift */; };
+		4C62209623B251420072010A /* light-launch-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C62209523B251420072010A /* light-launch-animation.json */; };
 		4C63DEC323AFF2AB003FD5EF /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C63DEC223AFF2AB003FD5EF /* AnimationViewController.swift */; };
-		4C63DEC623AFF574003FD5EF /* light-launch-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C63DEC523AFF574003FD5EF /* light-launch-animation.json */; };
 		4C63DEC823AFF84A003FD5EF /* dark-launch-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C63DEC723AFF84A003FD5EF /* dark-launch-animation.json */; };
 		4C73CD0A22EA837F002B678A /* WorkshopTableViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C73CD0922EA837F002B678A /* WorkshopTableViewControllerModel.swift */; };
 		4C73CD0C22EA8429002B678A /* WorkshopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C73CD0B22EA8429002B678A /* WorkshopModel.swift */; };
@@ -159,8 +159,8 @@
 		4C40CA0C22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedTableViewCell.swift; sourceTree = "<group>"; };
 		4C48BF2C22E8023D00C9C764 /* LiveCountdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCountdownView.xib; sourceTree = "<group>"; };
 		4C48BF2E22E8051B00C9C764 /* LiveCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCountdownView.swift; sourceTree = "<group>"; };
+		4C62209523B251420072010A /* light-launch-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "light-launch-animation.json"; sourceTree = "<group>"; };
 		4C63DEC223AFF2AB003FD5EF /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
-		4C63DEC523AFF574003FD5EF /* light-launch-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "light-launch-animation.json"; sourceTree = "<group>"; };
 		4C63DEC723AFF84A003FD5EF /* dark-launch-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dark-launch-animation.json"; sourceTree = "<group>"; };
 		4C73CD0922EA837F002B678A /* WorkshopTableViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopTableViewControllerModel.swift; sourceTree = "<group>"; };
 		4C73CD0B22EA8429002B678A /* WorkshopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopModel.swift; sourceTree = "<group>"; };
@@ -478,8 +478,8 @@
 		4C63DEC423AFF55F003FD5EF /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				4C62209523B251420072010A /* light-launch-animation.json */,
 				4C63DEC723AFF84A003FD5EF /* dark-launch-animation.json */,
-				4C63DEC523AFF574003FD5EF /* light-launch-animation.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -684,7 +684,6 @@
 				4C34019122BFFB2B00432D80 /* LaunchScreen.storyboard in Resources */,
 				4CE41D1C22C56058008836DC /* Lato-BoldItalic.ttf in Resources */,
 				4CE41D1B22C56058008836DC /* Lato-BlackItalic.ttf in Resources */,
-				4C63DEC623AFF574003FD5EF /* light-launch-animation.json in Resources */,
 				4CB743892381A8720072AFDA /* UIConfigurationList.plist in Resources */,
 				4C34018E22BFFB2B00432D80 /* Assets.xcassets in Resources */,
 				4C02FFDC22C2DC0900FC700C /* FilterCollectionViewCell.xib in Resources */,
@@ -696,6 +695,7 @@
 				4C63DEC823AFF84A003FD5EF /* dark-launch-animation.json in Resources */,
 				4CE41D1922C56058008836DC /* Lato-Regular.ttf in Resources */,
 				4C2670D123410492002331EF /* GoogleService-Info.plist in Resources */,
+				4C62209623B251420072010A /* light-launch-animation.json in Resources */,
 				4C2EE7CA22F630D9008C97AF /* EmptyTableBackgroundView.xib in Resources */,
 				4C48BF2D22E8023D00C9C764 /* LiveCountdownView.xib in Resources */,
 			);

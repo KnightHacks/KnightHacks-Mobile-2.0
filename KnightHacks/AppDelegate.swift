@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     public var token: String = ""
     public var applicationFilters: [String:[FilterMenuModel]] = [:]
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         applicationWillOverrideUI()
@@ -84,6 +84,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if let backgroundColorHex = UIConfigurationList[ColorSchemeName.backgroundColor.rawValue] as? String, let intValue = Int(backgroundColorHex, radix: 16) {
             BACKGROUND_COLOR = UIColor(hex: intValue, alpha: 1)
         }
+        
+        if let scheduleMenuColorHex = UIConfigurationList[ColorSchemeName.scheduleMenuColor.rawValue] as? String, let intValue = Int(scheduleMenuColorHex, radix: 16) {
+            SCHEDULE_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
+        if let workshopsMenuColorHex = UIConfigurationList[ColorSchemeName.workshopMenuColor.rawValue] as? String, let intValue = Int(workshopsMenuColorHex, radix: 16) {
+            WORKSHOPS_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
+        if let liveUpdatesMenuColorHex = UIConfigurationList[ColorSchemeName.liveUpdatesMenuColor.rawValue] as? String, let intValue = Int(liveUpdatesMenuColorHex, radix: 16) {
+            LIVE_UPDATES_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
+        if let sponsorsMenuColorHex = UIConfigurationList[ColorSchemeName.sponsorsMenuColor.rawValue] as? String, let intValue = Int(sponsorsMenuColorHex, radix: 16) {
+            SPONSORS_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
+        if let faqsMenuColorHex = UIConfigurationList[ColorSchemeName.faqsMenuColor.rawValue] as? String, let intValue = Int(faqsMenuColorHex, radix: 16) {
+            FAQS_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
+        if let profileMenuColorHex = UIConfigurationList[ColorSchemeName.profileMenuColor.rawValue] as? String, let intValue = Int(profileMenuColorHex, radix: 16) {
+            PROFILE_MENU_COLOR = UIColor(hex: intValue, alpha: 1)
+        }
+        
     }
     
     func getPlist(withName name: String) -> [String:Any]? {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 internal struct ImageRequestSingleton {
     
@@ -16,7 +17,6 @@ internal struct ImageRequestSingleton {
         let httpsText = "https://"
         let httpText = "http://"
         var decodedImage: UIImage!
-        let dataTest: Data? = nil
         
         // if prefix has no http:// append https://
         // if it is http:// change to https://
@@ -32,7 +32,7 @@ internal struct ImageRequestSingleton {
             return
         }
         
-        UIImage.cacheStorageCheck(at: validatedUrlString, imageData: dataTest, completion: { (cachedImage) in
+        UIImage.cacheStorageCheck(at: validatedUrlString, completion: { (cachedImage) in
             
             guard cachedImage == nil else {
                 decodedImage = cachedImage
@@ -45,8 +45,8 @@ internal struct ImageRequestSingleton {
                 DispatchQueue.main.async {
                     
                     if let err = err {
-                        completion(nil)
                         print(err)
+                        completion(nil)
                         return
                     }
                     
@@ -57,11 +57,55 @@ internal struct ImageRequestSingleton {
                     }
                     
                     UIImage.cacheImage(with: validatedUrlString, data: imageData)
-                    completion(decodedImage)
+                    UIImage.cacheStorageCheck(at: validatedUrlString, completion: { (newCachedImage) in
+                        if let unwrappedCachedImage = newCachedImage {
+                            completion(unwrappedCachedImage)
+                        } else {
+                            completion(nil)
+                        }
+                    })
                 }
             }
             
             task.resume()
         })
+    }
+    
+    static let storage = Storage.storage()
+    static func firebaseGetImage(reference: String, completion: @escaping (UIImage?) -> Void) {
+        
+        UIImage.cacheStorageCheck(at: reference, completion: { (cachedImage) in
+            
+            if let decodedImage = cachedImage {
+                completion(decodedImage)
+                return
+            }
+            
+            storage.reference(withPath: reference).getData(maxSize: 1 * 1024 * 1024) { data, error in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        print(error)
+                        completion(nil)
+                        return
+                    }
+                    
+                    guard let imageData = data else {
+                        print("Error: Could not convert response to Data")
+                        completion(nil)
+                        return
+                    }
+                    
+                    guard let image = UIImage(data: imageData) else {
+                        print("Error: Could not convert data to image")
+                        completion(nil)
+                        return
+                    }
+                    
+                    UIImage.cacheImage(with: reference, data: imageData)
+                    completion(image)
+                }
+            }
+        })
+        
     }
 }

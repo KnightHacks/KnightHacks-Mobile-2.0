@@ -29,9 +29,11 @@ internal class WorkshopTableViewCell: UITableViewCell {
             addTags(model.filters)
             
             guard let url = model.imageURL else { return }
-            ImageRequestSingleton.getImage(at: url) { (image) in
+            ImageRequestSingleton.firebaseGetImage(reference: url) { (image) in
                 if let image = image {
                     self.workshopImageView.image = image
+                } else {
+                    print("couldnt fetch image")
                 }
             }
         }
@@ -41,6 +43,7 @@ internal class WorkshopTableViewCell: UITableViewCell {
         super.awakeFromNib()
         addSpecifiedShadow(customCellBackground)
         titleLabel.font = TITLE_FONT
+        titleLabel.textColor = BACKGROUND_COLOR
         descriptionLabel.font = PARAGRAPH_FONT
         timeLabel.font = MAJOR_REGULAR_FONT
     }

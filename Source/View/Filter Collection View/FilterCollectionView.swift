@@ -30,7 +30,6 @@ public protocol FilterCollectionViewDelegate {
 public class FilterCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public static let nibName: String = "FilterCollectionView"
-    
     public static let minimumRequiredHeight: CGFloat = 115
     public static let minimumRequiredWidth: CGFloat = 85
     public static let minimumCellFrame: CGRect = CGRect(
@@ -93,6 +92,7 @@ public class FilterCollectionView: UIView, UICollectionViewDelegate, UICollectio
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: FilterCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: FilterCollectionViewCell.identifier)
+        collectionView.backgroundColor = BACKGROUND_COLOR
         collectionView.reloadData()
     }
     
@@ -119,9 +119,11 @@ public class FilterCollectionView: UIView, UICollectionViewDelegate, UICollectio
             return UICollectionViewCell(frame: FilterCollectionView.minimumCellFrame)
         }
         cell.model = source.filters[indexPath.row]
+        cell.backgroundColor = BACKGROUND_COLOR
+        
         return cell
     }
-    
+
 //    public final func reloadData() {
 //        guard let !filters.isEmpty else { return }
 //

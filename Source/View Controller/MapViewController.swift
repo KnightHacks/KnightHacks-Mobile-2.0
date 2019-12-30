@@ -9,8 +9,6 @@
 import UIKit
 
 internal class MapViewController: UIViewController, UIScrollViewDelegate {
-    private var viewModel: MapViewControllerModel!
-    
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -39,5 +37,11 @@ internal class MapViewController: UIViewController, UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mapImage
+    }
+    
+    func setMapImage(_ mapImageURL: String) {
+        ImageRequestSingleton.firebaseGetImage(reference: mapImageURL) { (image) in
+            self.mapImage.image = image
+        }
     }
 }

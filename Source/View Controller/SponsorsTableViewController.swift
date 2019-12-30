@@ -75,6 +75,10 @@ internal class SponsorsTableViewController: NavigationBarTableViewController, Na
                 return
         }
         
+        // TODO: Pass map image url to mapViewController
+        //let mapImageURL = viewModel.viewContent[indexPath.section][indexPath.row].mapImage
+        //mapViewController.setImage(mapImageURL)
+        
         present(mapViewController, animated: true, completion: nil)
     }
     

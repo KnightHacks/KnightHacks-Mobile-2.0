@@ -14,6 +14,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     private var viewModel: ProfileViewControllerModel!
 
     @IBOutlet weak var QRImage: UIImageView!
+    @IBOutlet weak var publicUUID: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +24,16 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-                
         self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
         updateNavigationTitle()
+        attemptToRetrieveUserData()
+    }
+    
+    private func attemptToRetrieveUserData() {
+        guard let hackerUUID = UserDefaultsHolder.getHackerUUID() else {
+            return
+        }
+        publicUUID.text = hackerUUID.publicUUID
     }
     
     private func updateNavigationTitle() {

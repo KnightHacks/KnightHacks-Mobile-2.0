@@ -747,6 +747,9 @@
                                                 <rect key="frame" x="99" y="322.33333333333331" width="177" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <state key="normal" title="Scan QR Code"/>
+                                                <connections>
+                                                    <segue destination="UXl-vU-9NB" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="yIS-8Z-awk"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xZ-3J-2ef">
                                                 <rect key="frame" x="25" y="388.33333333333331" width="325" height="2"/>
@@ -764,6 +767,15 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPk-xl-jtc">
                                                 <rect key="frame" x="139" y="962" width="97" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UUID Not Set" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebn-OU-SiL">
+                                                <rect key="frame" x="136" y="518.33333333333337" width="103" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="MS8-TM-1ZE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -785,7 +797,9 @@
                                             <constraint firstItem="Izf-QM-QYc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pUx-WZ-x8c" secondAttribute="leading" constant="50" id="dkp-7F-zr9"/>
                                             <constraint firstItem="zTl-ZS-DtS" firstAttribute="top" secondItem="Izf-QM-QYc" secondAttribute="bottom" constant="20" id="hUI-Il-sjC"/>
                                             <constraint firstItem="BPk-xl-jtc" firstAttribute="centerX" secondItem="pUx-WZ-x8c" secondAttribute="centerX" id="iZI-3E-UlV"/>
+                                            <constraint firstItem="ebn-OU-SiL" firstAttribute="top" secondItem="EPI-RR-OES" secondAttribute="bottom" constant="70" id="koe-t5-7Ip"/>
                                             <constraint firstItem="iQc-Fa-JsI" firstAttribute="bottom" secondItem="BPk-xl-jtc" secondAttribute="bottom" id="qwg-6k-ouo"/>
+                                            <constraint firstItem="ebn-OU-SiL" firstAttribute="centerX" secondItem="pUx-WZ-x8c" secondAttribute="centerX" id="rrD-Zt-YXQ"/>
                                             <constraint firstItem="zTl-ZS-DtS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iQc-Fa-JsI" secondAttribute="leading" constant="50" id="seo-fF-w2c"/>
                                             <constraint firstItem="Izf-QM-QYc" firstAttribute="top" secondItem="iQc-Fa-JsI" secondAttribute="top" constant="25" id="tTS-Oz-gpY"/>
                                         </constraints>
@@ -815,6 +829,7 @@
                     <size key="freeformSize" width="375" height="1023"/>
                     <connections>
                         <outlet property="QRImage" destination="zTl-ZS-DtS" id="xPC-9K-kTm"/>
+                        <outlet property="publicUUID" destination="ebn-OU-SiL" id="gu7-jC-jxn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXJ-2T-0F1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -900,6 +915,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJs-Wf-fCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="608.69565217391312" y="1563.6160714285713"/>
+        </scene>
+        <!--QRScannerViewController-->
+        <scene sceneID="gc1-Qq-dfP">
+            <objects>
+                <viewController storyboardIdentifier="QRScannerViewController" title="QRScannerViewController" id="UXl-vU-9NB" customClass="QRScannerViewController" customModule="KnightHacks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JrH-6K-Slc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crC-wu-krx">
+                                <rect key="frame" x="35" y="741" width="305" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="VRM-FP-SHu"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" destination="UXl-vU-9NB" eventType="touchUpInside" id="d9O-aw-axS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRc-k5-31o">
+                                <rect key="frame" x="35" y="693" width="305" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="gH4-JG-NE3"/>
+                                </constraints>
+                                <state key="normal" title="Alternative Login">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="alternativeButtonClicked:" destination="UXl-vU-9NB" eventType="touchUpInside" id="cwB-XR-Gnx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR Code Detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSO-Te-hNQ">
+                                <rect key="frame" x="35" y="66" width="305" height="28"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="4Sf-F7-gHM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="RqU-Ct-z96">
+                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RqU-Ct-z96" firstAttribute="centerX" secondItem="JrH-6K-Slc" secondAttribute="centerX" id="5wx-eQ-Ws9"/>
+                            <constraint firstItem="uSO-Te-hNQ" firstAttribute="top" secondItem="2Fl-7l-yLa" secondAttribute="top" constant="22" id="Bnv-Nq-iQR"/>
+                            <constraint firstItem="2Fl-7l-yLa" firstAttribute="trailing" secondItem="uSO-Te-hNQ" secondAttribute="trailing" constant="35" id="IA0-la-INW"/>
+                            <constraint firstItem="crC-wu-krx" firstAttribute="leading" secondItem="2Fl-7l-yLa" secondAttribute="leading" constant="35" id="Kja-UD-x7s"/>
+                            <constraint firstItem="2Fl-7l-yLa" firstAttribute="trailing" secondItem="crC-wu-krx" secondAttribute="trailing" constant="35" id="UxA-jS-dwT"/>
+                            <constraint firstItem="crC-wu-krx" firstAttribute="top" secondItem="aRc-k5-31o" secondAttribute="bottom" constant="6" id="WJD-BC-UDE"/>
+                            <constraint firstItem="uSO-Te-hNQ" firstAttribute="leading" secondItem="2Fl-7l-yLa" secondAttribute="leading" constant="35" id="ZCo-OD-CAo"/>
+                            <constraint firstItem="crC-wu-krx" firstAttribute="bottom" secondItem="2Fl-7l-yLa" secondAttribute="bottom" constant="5" id="krc-N3-xSV"/>
+                            <constraint firstItem="2Fl-7l-yLa" firstAttribute="trailing" secondItem="aRc-k5-31o" secondAttribute="trailing" constant="35" id="mvX-CT-VlA"/>
+                            <constraint firstItem="RqU-Ct-z96" firstAttribute="centerY" secondItem="JrH-6K-Slc" secondAttribute="centerY" id="tff-ft-h4w"/>
+                            <constraint firstItem="aRc-k5-31o" firstAttribute="leading" secondItem="2Fl-7l-yLa" secondAttribute="leading" constant="35" id="wyt-u5-vKd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Fl-7l-yLa"/>
+                    </view>
+                    <connections>
+                        <outlet property="alternativeLoginButton" destination="aRc-k5-31o" id="OQ1-Wl-R4W"/>
+                        <outlet property="cancelButton" destination="crC-wu-krx" id="Hbb-yt-CYn"/>
+                        <outlet property="detectionMessageLabel" destination="uSO-Te-hNQ" id="PwG-n7-LVr"/>
+                        <outlet property="networkActivityIndicator" destination="RqU-Ct-z96" id="qGu-oZ-co1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9s4-WA-V9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3432.8000000000002" y="1510.344827586207"/>
         </scene>
     </scenes>
     <resources>

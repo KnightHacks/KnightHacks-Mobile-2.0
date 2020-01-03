@@ -9,11 +9,11 @@
 import UIKit
 import Lottie
 
-class AnimationHolder: UIViewController {
+public class AnimationHolder: UIViewController {
     
     var animationView: AnimationView!
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    override public var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
@@ -26,7 +26,7 @@ class AnimationHolder: UIViewController {
         self.view.backgroundColor = UIColor(red: 23, green: 46, blue: 115, a: 1)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         let starAnimation = Animation.named("light-launch-animation")
         animationView.animation = starAnimation
         animationView.contentMode = .scaleAspectFit

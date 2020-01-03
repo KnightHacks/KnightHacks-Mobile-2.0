@@ -19,3 +19,7 @@ jobs:
 
     - name: Run Linter
       run: swiftlint
+      
+    - name: Build Application
+      run: set -o pipefail && xcodebuild -workspace KnightHacks.xcworkspace -scheme KnightHacks -sdk iphonesimulator -only-testing:KnightHacksTests build -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcpretty
+

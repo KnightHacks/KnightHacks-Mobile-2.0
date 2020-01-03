@@ -1,4 +1,4 @@
-name: Swift
+name: Standard Build
 
 on: 
   pull_request:
@@ -13,7 +13,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+
+    - name: Prepare For Build
+      run: gem install cocoapods && gem install xcpretty
+      
+    - name: Install Pods
+      run: pod install
+
+    - name: Run Build
+      run: set -o pipefail && xcodebuild -workspace KnightHacks.xcworkspace -scheme KnightHacks -sdk iphonesimulator -only-testing:KnightHacksTests build -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcpretty
+
+    - name: Run Tests
+      run: set -o pipefail && xcodebuild -workspace KnightHacks.xcworkspace -scheme KnightHacks -sdk iphonesimulator -only-testing:KnightHacksTests test -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcpretty

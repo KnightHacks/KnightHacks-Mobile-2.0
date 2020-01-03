@@ -94,7 +94,6 @@
 		E53B747D235E3D4C0022264E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53B747C235E3D4C0022264E /* ProfileViewController.swift */; };
 		E53B747F235E3F990022264E /* ProfileViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53B747E235E3F990022264E /* ProfileViewControllerModel.swift */; };
 		E5FEB25C23788BAB004CFDEE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FEB25B23788BAB004CFDEE /* MapViewController.swift */; };
-		E5FEB25E23788D5A004CFDEE /* MapViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FEB25D23788D5A004CFDEE /* MapViewControllerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,7 +214,6 @@
 		E53B747C235E3D4C0022264E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E53B747E235E3F990022264E /* ProfileViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerModel.swift; sourceTree = "<group>"; };
 		E5FEB25B23788BAB004CFDEE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		E5FEB25D23788D5A004CFDEE /* MapViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,7 +254,6 @@
 				8939A1274C80A90F54D81D7B /* Pods-KnightHacksUITests.debug.xcconfig */,
 				2E1022C325111FADD9E4E30A /* Pods-KnightHacksUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -437,7 +434,6 @@
 				4C73CD1122EAA41D002B678A /* LiveUpdateTableViewControllerModel.swift */,
 				4C38E45F22EF3EDA00FC3506 /* FrequentlyAskedViewControllerModel.swift */,
 				E53B747E235E3F990022264E /* ProfileViewControllerModel.swift */,
-				E5FEB25D23788D5A004CFDEE /* MapViewControllerModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -880,7 +876,6 @@
 				4CD395A323AC41020023FD49 /* SubsciptionTitle.swift in Sources */,
 				4C22AFE222C6DA2900FA99BB /* WorkshopTableViewCell.swift in Sources */,
 				4C367AA422E57C490006CD2F /* NavigationBarViewControllerExtension.swift in Sources */,
-				E5FEB25E23788D5A004CFDEE /* MapViewControllerModel.swift in Sources */,
 				4C3401BA22C001B200432D80 /* MenuTableViewCell.swift in Sources */,
 				4CD3E3A822EE3A4A007E756E /* SponsorModel.swift in Sources */,
 				4C29A7CF22C014EF00C113A9 /* HomeMenuModel.swift in Sources */,

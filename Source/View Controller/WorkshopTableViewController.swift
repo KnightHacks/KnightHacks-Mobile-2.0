@@ -92,15 +92,13 @@ internal class WorkshopTableViewController: NavigationBarTableViewController, Na
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destinationID = "MapViewController"
-        
-        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: destinationID) as? MapViewController
+        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
             else {
                 print("ERROR: View controller not found")
                 return
             }
         
-        // TODO: Pass map image url to mapViewController
+        // TO DO: Pass map image url to mapViewController
         //let mapImageURL = viewModel.viewContent[indexPath.section][indexPath.row].mapImage
         //mapViewController.setImage(mapImageURL)
         

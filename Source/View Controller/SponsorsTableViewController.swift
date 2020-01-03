@@ -66,22 +66,6 @@ internal class SponsorsTableViewController: NavigationBarTableViewController, Na
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destinationID = "MapViewController"
-        
-        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: destinationID) as? MapViewController
-            else {
-                print("ERROR: View controller not found")
-                return
-        }
-        
-        // TODO: Pass map image url to mapViewController
-        //let mapImageURL = viewModel.viewContent[indexPath.section][indexPath.row].mapImage
-        //mapViewController.setImage(mapImageURL)
-        
-        present(mapViewController, animated: true, completion: nil)
-    }
-    
     // MARK: - View model delegate
     
     func didFetchModel() {

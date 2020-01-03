@@ -11,6 +11,8 @@ import AVFoundation
 
 internal class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    internal static let identifier: String = "QRScannerViewController"
+    
     @IBOutlet weak var alternativeLoginButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var detectionMessageLabel: UILabel!
@@ -137,27 +139,19 @@ internal class QRScannerViewController: UIViewController, AVCaptureMetadataOutpu
         processQR(barCodeStringValue)
     }
     
-    private func processQR(_ value: String) {
-        
-        var publicUUID = value
-        
-        if !publicUUID.isEmpty {
-            publicUUID.removeFirst()
-        }
-        if !publicUUID.isEmpty {
-            publicUUID.removeLast()
-        }
+    private func processQR(_ publicUUID: String) {
         
         detectionMessageLabel.isHidden = true
         networkActivityIndicator.startAnimating()
         
         guard !self.scannedInvalidCodes.contains(publicUUID) else {
-            qrCodeFrameView?.frame = CGRect.zero
             detectionMessageLabel.text = "Invalid QR Code"
+            qrCodeFrameView?.frame = CGRect.zero
             detectionMessageLabel.isHidden = false
             return
         }
         
+        print(publicUUID)
         validateQRCode(publicUUID: publicUUID) { (privateUUID) in
             self.networkActivityIndicator.stopAnimating()
             

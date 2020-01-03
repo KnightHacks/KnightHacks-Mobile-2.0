@@ -9,5 +9,8 @@
 import Foundation
 
 internal class ProfileViewControllerModel {
-    
+    let nonActiveSessionMenuItems = [
+        SettingsMenuModel(function: .scanQR, title: "Scan QR Code to Login", imageName: "kh-blue"),
+        SettingsMenuModel(function: .navigateNextViewController, title: "My Notification Settings", imageName: "kh-blue")
+    ]
 }

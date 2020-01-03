@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         setupNotifications(application)
         removeNotificationBadge(application)
         startLaunchAnimation()
+        UIImage.setLimit(byteCount: 26214400)
         return true
     }
     

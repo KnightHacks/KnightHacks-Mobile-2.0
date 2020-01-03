@@ -12,6 +12,10 @@ private let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImage {
     
+    static func setLimit(byteCount: Int) {
+        imageCache.totalCostLimit = byteCount
+    }
+    
     static func cacheStorageCheck(at url: String, completion: @escaping (UIImage?) -> Void) {
         if let cachedImage = imageCache.object(forKey: url as AnyObject) as? Data {
             completion(UIImage(data: cachedImage))
@@ -22,6 +26,6 @@ extension UIImage {
     }
     
     static func cacheImage(with url: String, data: Data) {
-        imageCache.setObject(data as AnyObject, forKey: url as AnyObject)
+        imageCache.setObject(data as AnyObject, forKey: url as AnyObject, cost: data.count)
     }
 }

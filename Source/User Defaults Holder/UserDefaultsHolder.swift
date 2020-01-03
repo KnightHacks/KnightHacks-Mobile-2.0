@@ -6,7 +6,7 @@
 //  Copyright © 2019 KnightHacks. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 internal struct HackerUUID {
     var publicUUID: String
@@ -17,6 +17,7 @@ struct UserDefaultsHolder {
     
     private static let publicUUIDKey: String = "publicUUID"
     private static let privateUUIDKey: String = "privateUUID"
+    private static let profileImageKey: String = "profileImage"
     
     enum RequestKey: String {
         case isSubscribedToGeneralNotifications
@@ -43,7 +44,33 @@ struct UserDefaultsHolder {
         UserDefaults.standard.set(id.privateUUID, forKey: privateUUIDKey)
     }
     
+    static func clearHackerData() {
+        UserDefaults.standard.removeObject(forKey: publicUUIDKey)
+        UserDefaults.standard.removeObject(forKey: privateUUIDKey)
+        UserDefaults.standard.removeObject(forKey: profileImageKey)
+    }
+    
     static func set(value: Bool, for key: RequestKey) {
         UserDefaults.standard.set(value, forKey: key.rawValue)
+    }
+    
+    static func set(profileImage: UIImage) -> Bool {
+        guard let data = profileImage.pngData() else {
+            return false
+        }
+        
+        UserDefaults.standard.set(data, forKey: profileImageKey)
+        return true
+    }
+    
+    static func getProfileImage() -> UIImage? {
+        guard
+            let imageData = UserDefaults.standard.data(forKey: profileImageKey),
+            let image = UIImage(data: imageData)
+        else {
+            return nil
+        }
+        
+        return image
     }
 }

@@ -122,15 +122,4 @@ class ServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
-    func testGettingHackerData() {
-        let expectation = XCTestExpectation(description: "Done")
-        
-        let body = [HackerRequestBodyParameter.publicUuid.rawValue: "f71c95ae-3159-4ec0-8d07-fd00c740d87a"]
-        HackerRequestSingleton<AdministrativeModel>().makeRequest(endpoint: .findHacker, body: body) { (hackerInfo) in
-            XCTAssertNotNil(hackerInfo)
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 10.0)
-    }
 }

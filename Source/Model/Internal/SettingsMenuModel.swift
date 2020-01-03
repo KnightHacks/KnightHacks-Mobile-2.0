@@ -9,9 +9,10 @@
 import Foundation
 
 enum SettingsMenuModelFunction {
-    case scanQR
+    case automaticLogin
+    case manualLogin
     case navigateNextViewController
-    case dismissSession
+    case logout
 }
 
 internal struct SettingsMenuModel {

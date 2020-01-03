@@ -765,7 +765,7 @@
                                 <rect key="frame" x="0.0" y="314" width="375" height="508"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nXz-TR-tdu">
-                                        <rect key="frame" x="0.0" y="18" width="375" height="482"/>
+                                        <rect key="frame" x="0.0" y="25" width="375" height="475"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsTableViewCell" rowHeight="90" id="S96-ke-Oux" customClass="SettingsTableViewCell" customModule="KnightHacks" customModuleProvider="target">
@@ -832,7 +832,7 @@
                                     <constraint firstAttribute="bottom" secondItem="nXz-TR-tdu" secondAttribute="bottom" constant="8" id="LcX-yR-wzz"/>
                                     <constraint firstAttribute="trailing" secondItem="nXz-TR-tdu" secondAttribute="trailing" id="Wyv-jl-sud"/>
                                     <constraint firstItem="nXz-TR-tdu" firstAttribute="leading" secondItem="Xb5-MS-xzA" secondAttribute="leading" id="oCi-fs-Jd6"/>
-                                    <constraint firstItem="nXz-TR-tdu" firstAttribute="top" secondItem="Xb5-MS-xzA" secondAttribute="top" constant="18" id="znU-Cn-fHM"/>
+                                    <constraint firstItem="nXz-TR-tdu" firstAttribute="top" secondItem="Xb5-MS-xzA" secondAttribute="top" constant="25" id="znU-Cn-fHM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -849,8 +849,12 @@
                         <viewLayoutGuide key="safeArea" id="NKN-V2-4R9"/>
                     </view>
                     <connections>
+                        <outlet property="pointsLabel" destination="xwc-cD-IrB" id="wmi-XP-GtB"/>
+                        <outlet property="profileBackgroundImageView" destination="IZ8-c2-T2v" id="ieL-lH-suF"/>
+                        <outlet property="profileNameLabel" destination="ScW-2g-cgL" id="seY-xm-Gvs"/>
                         <outlet property="profilePictureButton" destination="kZb-Aw-LVW" id="EoG-f4-NRE"/>
                         <outlet property="settingsBackgroundTopAnchor" destination="dRz-br-VlR" id="d9F-Ky-Zlj"/>
+                        <outlet property="settingsBackgroundView" destination="Xb5-MS-xzA" id="DO0-Ho-oCC"/>
                         <outlet property="settingsTableView" destination="nXz-TR-tdu" id="aP5-ZJ-Ckb"/>
                     </connections>
                 </viewController>

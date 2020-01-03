@@ -17,26 +17,28 @@ extension ProfileViewController {
     
     private func controlActiveSessionNavigation() {
         self.navigationItem.largeTitleDisplayMode = .never
-        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.barTintColor = PROFILE_BACKGROUND_COLOR
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.tintColor = BACKGROUND_COLOR
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
+        self.profileBackgroundImageView.backgroundColor = PROFILE_BACKGROUND_COLOR
         self.settingsBackgroundTopAnchor.constant = self.activeSessionTopAnchor
-        self.view.layoutIfNeeded()    }
+        self.view.layoutIfNeeded()
+    }
     
     internal func setupActiveSessionNavigation(withAnimation: Bool = false) {
         
         guard withAnimation else {
             controlActiveSessionNavigation()
+            
             return
         }
         
-        UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
             self.controlActiveSessionNavigation()
-        }, completion: nil)
+        })
     }
     
     private func controlNonActiveSessionNavigation() {
@@ -65,8 +67,12 @@ extension ProfileViewController {
             return
         }
         
-        UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
             self.controlNonActiveSessionNavigation()
-        }, completion: nil)
+        }) { _ in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.profileBackgroundImageView.backgroundColor = BACKGROUND_COLOR
+            })
+        }
     }
 }

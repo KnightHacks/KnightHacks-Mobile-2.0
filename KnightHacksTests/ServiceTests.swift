@@ -121,5 +121,4 @@ class ServiceTests: XCTestCase {
         
         wait(for: [expectation], timeout: 10.0)
     }
-    
 }

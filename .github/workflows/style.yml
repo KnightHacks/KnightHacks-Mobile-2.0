@@ -1,4 +1,4 @@
-name: Standard Build
+name: Style Check
 
 on: 
   pull_request:
@@ -13,15 +13,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      
+    - name: Install Linter
+      run: brew install swiftlint
 
+    - name: Run Linter
+      run: swiftlint
+    
     - name: Prepare For Build
       run: gem install cocoapods && gem install xcpretty
       
     - name: Install Pods
       run: pod install
-
-    - name: Run Build
+      
+    - name: Build Application
       run: set -o pipefail && xcodebuild -workspace KnightHacks.xcworkspace -scheme KnightHacks -sdk iphonesimulator -only-testing:KnightHacksTests build -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcpretty
 
-    - name: Run Tests
-      run: set -o pipefail && xcodebuild -workspace KnightHacks.xcworkspace -scheme KnightHacks -sdk iphonesimulator -only-testing:KnightHacksTests test -destination "platform=iOS Simulator,name=iPhone 11 Pro" | xcpretty

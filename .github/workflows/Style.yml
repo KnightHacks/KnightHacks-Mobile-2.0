@@ -1,0 +1,21 @@
+name: Standard Build
+
+on: 
+  pull_request:
+    branches: 
+      - master
+      - develop
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      
+    - name: Install Linter
+      run: brew install swiftlint
+
+    - name: Run Linter
+      run: swiftlint

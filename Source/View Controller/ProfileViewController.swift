@@ -139,6 +139,6 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     }
     
     @IBAction func profilePictureButtonClicked(_ sender: Any) {
-        // logic to change user profile picture
+        presentCameraPickerViewController()
     }
 }

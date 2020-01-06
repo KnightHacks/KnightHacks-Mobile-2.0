@@ -43,6 +43,7 @@
 		4C38E46022EF3EDA00FC3506 /* FrequentlyAskedViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38E45F22EF3EDA00FC3506 /* FrequentlyAskedViewControllerModel.swift */; };
 		4C40CA0B22EE63A600ECD930 /* FrequentlyAskedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40CA0A22EE63A600ECD930 /* FrequentlyAskedViewController.swift */; };
 		4C40CA0D22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40CA0C22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift */; };
+		4C4555B923C2642700BD0718 /* ProfileImageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4555B823C2642700BD0718 /* ProfileImageViewControllerExtension.swift */; };
 		4C484F0D23BFD37A00234146 /* ProfileViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C484F0C23BFD37A00234146 /* ProfileViewControllerExtension.swift */; };
 		4C484F0F23BFD47400234146 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C484F0E23BFD47400234146 /* SettingsTableViewCell.swift */; };
 		4C484F1123BFD76C00234146 /* SettingsMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C484F1023BFD76C00234146 /* SettingsMenuModel.swift */; };
@@ -163,6 +164,7 @@
 		4C38E45F22EF3EDA00FC3506 /* FrequentlyAskedViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedViewControllerModel.swift; sourceTree = "<group>"; };
 		4C40CA0A22EE63A600ECD930 /* FrequentlyAskedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedViewController.swift; sourceTree = "<group>"; };
 		4C40CA0C22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedTableViewCell.swift; sourceTree = "<group>"; };
+		4C4555B823C2642700BD0718 /* ProfileImageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewControllerExtension.swift; sourceTree = "<group>"; };
 		4C484F0C23BFD37A00234146 /* ProfileViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerExtension.swift; sourceTree = "<group>"; };
 		4C484F0E23BFD47400234146 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		4C484F1023BFD76C00234146 /* SettingsMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuModel.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 			children = (
 				E53B747C235E3D4C0022264E /* ProfileViewController.swift */,
 				4C484F0C23BFD37A00234146 /* ProfileViewControllerExtension.swift */,
+				4C4555B823C2642700BD0718 /* ProfileImageViewControllerExtension.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -896,6 +899,7 @@
 				4C73CD1022EAA18F002B678A /* LiveUpdateModel.swift in Sources */,
 				4C2EE7CC22F63398008C97AF /* EmptyTableBackgroundView.swift in Sources */,
 				4CD3E3A222EE0420007E756E /* RocketRefreshControlView.swift in Sources */,
+				4C4555B923C2642700BD0718 /* ProfileImageViewControllerExtension.swift in Sources */,
 				4CEDF56A22C022B10025EF47 /* ScheduleTableViewController.swift in Sources */,
 				4CD395A323AC41020023FD49 /* SubsciptionTitle.swift in Sources */,
 				4C22AFE222C6DA2900FA99BB /* WorkshopTableViewCell.swift in Sources */,
@@ -1086,7 +1090,7 @@
 				CODE_SIGN_ENTITLEMENTS = KnightHacks/KnightHacks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZG8L9MP57M;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KnightHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1108,7 +1112,7 @@
 				CODE_SIGN_ENTITLEMENTS = KnightHacks/KnightHacks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZG8L9MP57M;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KnightHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

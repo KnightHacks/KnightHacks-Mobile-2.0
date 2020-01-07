@@ -43,6 +43,10 @@
 		4C38E46022EF3EDA00FC3506 /* FrequentlyAskedViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38E45F22EF3EDA00FC3506 /* FrequentlyAskedViewControllerModel.swift */; };
 		4C40CA0B22EE63A600ECD930 /* FrequentlyAskedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40CA0A22EE63A600ECD930 /* FrequentlyAskedViewController.swift */; };
 		4C40CA0D22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C40CA0C22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift */; };
+		4C4555B923C2642700BD0718 /* ProfileImageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4555B823C2642700BD0718 /* ProfileImageViewControllerExtension.swift */; };
+		4C484F0D23BFD37A00234146 /* ProfileViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C484F0C23BFD37A00234146 /* ProfileViewControllerExtension.swift */; };
+		4C484F0F23BFD47400234146 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C484F0E23BFD47400234146 /* SettingsTableViewCell.swift */; };
+		4C484F1123BFD76C00234146 /* SettingsMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C484F1023BFD76C00234146 /* SettingsMenuModel.swift */; };
 		4C48BF2D22E8023D00C9C764 /* LiveCountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C48BF2C22E8023D00C9C764 /* LiveCountdownView.xib */; };
 		4C48BF2F22E8051B00C9C764 /* LiveCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48BF2E22E8051B00C9C764 /* LiveCountdownView.swift */; };
 		4C62209623B251420072010A /* light-launch-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C62209523B251420072010A /* light-launch-animation.json */; };
@@ -160,6 +164,10 @@
 		4C38E45F22EF3EDA00FC3506 /* FrequentlyAskedViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedViewControllerModel.swift; sourceTree = "<group>"; };
 		4C40CA0A22EE63A600ECD930 /* FrequentlyAskedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedViewController.swift; sourceTree = "<group>"; };
 		4C40CA0C22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentlyAskedTableViewCell.swift; sourceTree = "<group>"; };
+		4C4555B823C2642700BD0718 /* ProfileImageViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewControllerExtension.swift; sourceTree = "<group>"; };
+		4C484F0C23BFD37A00234146 /* ProfileViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerExtension.swift; sourceTree = "<group>"; };
+		4C484F0E23BFD47400234146 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		4C484F1023BFD76C00234146 /* SettingsMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuModel.swift; sourceTree = "<group>"; };
 		4C48BF2C22E8023D00C9C764 /* LiveCountdownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCountdownView.xib; sourceTree = "<group>"; };
 		4C48BF2E22E8051B00C9C764 /* LiveCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCountdownView.swift; sourceTree = "<group>"; };
 		4C62209523B251420072010A /* light-launch-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "light-launch-animation.json"; sourceTree = "<group>"; };
@@ -217,7 +225,7 @@
 		E26E09CEDC8A5DC331EF402F /* Pods-KnightHacks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightHacks.release.xcconfig"; path = "Target Support Files/Pods-KnightHacks/Pods-KnightHacks.release.xcconfig"; sourceTree = "<group>"; };
 		E477662089AFE50C65AC6659 /* Pods_KnightHacks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnightHacks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51F74D8234113C8000AC727 /* CodableFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFilterModel.swift; sourceTree = "<group>"; };
-		E53B747C235E3D4C0022264E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E53B747C235E3D4C0022264E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		E53B747E235E3F990022264E /* ProfileViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerModel.swift; sourceTree = "<group>"; };
 		E5FEB25B23788BAB004CFDEE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -304,6 +312,7 @@
 				4C367AA122E579660006CD2F /* LiveUpdatesTableViewCell.swift */,
 				5E401595235041A700B5877A /* LiveUpdatesLargeTableViewCell.swift */,
 				4C40CA0C22EE771100ECD930 /* FrequentlyAskedTableViewCell.swift */,
+				4C484F0E23BFD47400234146 /* SettingsTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 		4C3401B622BFFEE000432D80 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4C484F0B23BFD35900234146 /* ProfileViewController */,
 				4C517B6922E6A77D007F8646 /* NavigationBarViewController */,
 				4C3401B422BFFE5E00432D80 /* HomeTableViewController.swift */,
 				4CEDF56922C022B10025EF47 /* ScheduleTableViewController.swift */,
@@ -454,6 +464,16 @@
 			path = "Date Engine";
 			sourceTree = "<group>";
 		};
+		4C484F0B23BFD35900234146 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E53B747C235E3D4C0022264E /* ProfileViewController.swift */,
+				4C484F0C23BFD37A00234146 /* ProfileViewControllerExtension.swift */,
+				4C4555B823C2642700BD0718 /* ProfileImageViewControllerExtension.swift */,
+			);
+			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
 		4C517B6922E6A77D007F8646 /* NavigationBarViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +502,7 @@
 				4C73CD0F22EAA18F002B678A /* LiveUpdateModel.swift */,
 				4C38E45D22EF3E0400FC3506 /* FrequentlyAskedModel.swift */,
 				4C29A7CE22C014EF00C113A9 /* HomeMenuModel.swift */,
+				4C484F1023BFD76C00234146 /* SettingsMenuModel.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -878,14 +899,17 @@
 				4CD395A123AC3EE40023FD49 /* UserDefaultsHolder.swift in Sources */,
 				4CCA072722C5BAA600ABD8CB /* WorkshopTableViewController.swift in Sources */,
 				E5FEB25C23788BAB004CFDEE /* MapViewController.swift in Sources */,
+				4C484F1123BFD76C00234146 /* SettingsMenuModel.swift in Sources */,
 				4C367A9C22E555660006CD2F /* HeaderDataSource.swift in Sources */,
 				4CEDF56C22C03BCC0025EF47 /* FilterCollectionView.swift in Sources */,
 				4C73CD0C22EA8429002B678A /* WorkshopModel.swift in Sources */,
+				4C484F0D23BFD37A00234146 /* ProfileViewControllerExtension.swift in Sources */,
 				4C02FFE722C3022F00FC700C /* MiscellaneousViewElements.swift in Sources */,
 				E53B747D235E3D4C0022264E /* ProfileViewController.swift in Sources */,
 				4C02FFE022C2F1E600FC700C /* FilterNames.swift in Sources */,
 				4C7E1E8022F646CF00416BDC /* RequestSingleton.swift in Sources */,
 				4C9B1ED823ABD26B003FB507 /* DictionaryCodable.swift in Sources */,
+				4C484F0F23BFD47400234146 /* SettingsTableViewCell.swift in Sources */,
 				4C34018722BFFB2A00432D80 /* AppDelegate.swift in Sources */,
 				4CE41D2522C576D9008836DC /* FilterCollectionViewObserver.swift in Sources */,
 				4C3401B522BFFE5E00432D80 /* HomeTableViewController.swift in Sources */,
@@ -902,6 +926,7 @@
 				4C73CD1022EAA18F002B678A /* LiveUpdateModel.swift in Sources */,
 				4C2EE7CC22F63398008C97AF /* EmptyTableBackgroundView.swift in Sources */,
 				4CD3E3A222EE0420007E756E /* RocketRefreshControlView.swift in Sources */,
+				4C4555B923C2642700BD0718 /* ProfileImageViewControllerExtension.swift in Sources */,
 				4CEDF56A22C022B10025EF47 /* ScheduleTableViewController.swift in Sources */,
 				4CD395A323AC41020023FD49 /* SubsciptionTitle.swift in Sources */,
 				4C22AFE222C6DA2900FA99BB /* WorkshopTableViewCell.swift in Sources */,

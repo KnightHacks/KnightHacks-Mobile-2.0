@@ -14,6 +14,7 @@
 		4C02FFE022C2F1E600FC700C /* FilterNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02FFDF22C2F1E600FC700C /* FilterNames.swift */; };
 		4C02FFE522C3002300FC700C /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02FFE422C3002300FC700C /* ScheduleTableViewCell.swift */; };
 		4C02FFE722C3022F00FC700C /* MiscellaneousViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02FFE622C3022F00FC700C /* MiscellaneousViewElements.swift */; };
+		4C10F59E23C505EF00645D60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C10F59D23C505EF00645D60 /* ProfileViewController.swift */; };
 		4C22AFE222C6DA2900FA99BB /* WorkshopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22AFE122C6DA2900FA99BB /* WorkshopTableViewCell.swift */; };
 		4C2670D123410492002331EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2670D023410492002331EF /* GoogleService-Info.plist */; };
 		4C29A7CF22C014EF00C113A9 /* HomeMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C29A7CE22C014EF00C113A9 /* HomeMenuModel.swift */; };
@@ -98,7 +99,6 @@
 		994F1B003B8A1D5E797B0F2A /* Pods_KnightHacksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8681327892E4F0741DB354C /* Pods_KnightHacksTests.framework */; };
 		D7547116CA1E3320A87C8DB7 /* Pods_KnightHacksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991C84B20BBCB7D339EF24AF /* Pods_KnightHacksUITests.framework */; };
 		E51F74D9234113C8000AC727 /* CodableFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F74D8234113C8000AC727 /* CodableFilterModel.swift */; };
-		E53B747D235E3D4C0022264E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53B747C235E3D4C0022264E /* ProfileViewController.swift */; };
 		E53B747F235E3F990022264E /* ProfileViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53B747E235E3F990022264E /* ProfileViewControllerModel.swift */; };
 		E5FEB25C23788BAB004CFDEE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FEB25B23788BAB004CFDEE /* MapViewController.swift */; };
 /* End PBXBuildFile section */
@@ -129,6 +129,7 @@
 		4C02FFDF22C2F1E600FC700C /* FilterNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterNames.swift; sourceTree = "<group>"; };
 		4C02FFE422C3002300FC700C /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		4C02FFE622C3022F00FC700C /* MiscellaneousViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscellaneousViewElements.swift; sourceTree = "<group>"; };
+		4C10F59D23C505EF00645D60 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4C22AFE122C6DA2900FA99BB /* WorkshopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopTableViewCell.swift; sourceTree = "<group>"; };
 		4C2670D023410492002331EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C29A7CE22C014EF00C113A9 /* HomeMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuModel.swift; sourceTree = "<group>"; };
@@ -225,7 +226,6 @@
 		E26E09CEDC8A5DC331EF402F /* Pods-KnightHacks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnightHacks.release.xcconfig"; path = "Target Support Files/Pods-KnightHacks/Pods-KnightHacks.release.xcconfig"; sourceTree = "<group>"; };
 		E477662089AFE50C65AC6659 /* Pods_KnightHacks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnightHacks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51F74D8234113C8000AC727 /* CodableFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFilterModel.swift; sourceTree = "<group>"; };
-		E53B747C235E3D4C0022264E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		E53B747E235E3F990022264E /* ProfileViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerModel.swift; sourceTree = "<group>"; };
 		E5FEB25B23788BAB004CFDEE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -393,8 +393,8 @@
 				4CD3E3A322EE2452007E756E /* SponsorsTableViewController.swift */,
 				4C367A9F22E578AA0006CD2F /* LiveUpdatesTableViewController.swift */,
 				4C40CA0A22EE63A600ECD930 /* FrequentlyAskedViewController.swift */,
-				E53B747C235E3D4C0022264E /* ProfileViewController.swift */,
 				E5FEB25B23788BAB004CFDEE /* MapViewController.swift */,
+				4C10F59D23C505EF00645D60 /* ProfileViewController.swift */,
 				4C97CAEF23BAA37800DC4A02 /* QRScannerViewController.swift */,
 				4C63DEC223AFF2AB003FD5EF /* AnimationViewController.swift */,
 			);
@@ -467,7 +467,6 @@
 		4C484F0B23BFD35900234146 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E53B747C235E3D4C0022264E /* ProfileViewController.swift */,
 				4C484F0C23BFD37A00234146 /* ProfileViewControllerExtension.swift */,
 				4C4555B823C2642700BD0718 /* ProfileImageViewControllerExtension.swift */,
 			);
@@ -594,16 +593,6 @@
 				4CF8EF2123BD39CC00037B8D /* AdministrativeModel.swift */,
 			);
 			path = Hacker;
-			sourceTree = "<group>";
-		};
-		BDFC1E562D7A1C4EE8CE6F68 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4BE7FE8F7127EC07389ABAD4 /* Pods_KnightHacks.framework */,
-				6BD9AB27C653E9D551C1331F /* Pods_KnightHacksTests.framework */,
-				BB3B3907F6AE61C5FCEDDAD9 /* Pods_KnightHacksUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -905,7 +894,6 @@
 				4C73CD0C22EA8429002B678A /* WorkshopModel.swift in Sources */,
 				4C484F0D23BFD37A00234146 /* ProfileViewControllerExtension.swift in Sources */,
 				4C02FFE722C3022F00FC700C /* MiscellaneousViewElements.swift in Sources */,
-				E53B747D235E3D4C0022264E /* ProfileViewController.swift in Sources */,
 				4C02FFE022C2F1E600FC700C /* FilterNames.swift in Sources */,
 				4C7E1E8022F646CF00416BDC /* RequestSingleton.swift in Sources */,
 				4C9B1ED823ABD26B003FB507 /* DictionaryCodable.swift in Sources */,
@@ -936,6 +924,7 @@
 				4C29A7CF22C014EF00C113A9 /* HomeMenuModel.swift in Sources */,
 				4CE41D2722C5B0F5008836DC /* NavigationBarViewController.swift in Sources */,
 				4C38E46022EF3EDA00FC3506 /* FrequentlyAskedViewControllerModel.swift in Sources */,
+				4C10F59E23C505EF00645D60 /* ProfileViewController.swift in Sources */,
 				4C7E1E8A22F68D1600416BDC /* ImageRequestSingleton.swift in Sources */,
 				E51F74D9234113C8000AC727 /* CodableFilterModel.swift in Sources */,
 			);

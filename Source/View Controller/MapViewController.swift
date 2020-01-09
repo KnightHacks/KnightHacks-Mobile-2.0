@@ -9,6 +9,9 @@
 import UIKit
 
 internal class MapViewController: UIViewController, UIScrollViewDelegate {
+    
+    internal static let identifier: String = "MapViewController"
+    
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
 

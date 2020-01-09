@@ -92,7 +92,7 @@ internal class WorkshopTableViewController: NavigationBarTableViewController, Na
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
+        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: MapViewController.identifier) as? MapViewController
             else {
                 print("ERROR: View controller not found")
                 return

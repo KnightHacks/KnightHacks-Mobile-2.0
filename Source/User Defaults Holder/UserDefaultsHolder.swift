@@ -10,13 +10,13 @@ import UIKit
 
 internal struct HackerUUID {
     var publicUUID: String
-    var privateUUID: String
+    var authCode: String
 }
 
 struct UserDefaultsHolder {
     
     private static let publicUUIDKey: String = "publicUUID"
-    private static let privateUUIDKey: String = "privateUUID"
+    private static let authCodeKey: String = "authCodeKey"
     private static let profileImageKey: String = "profileImage"
     
     enum RequestKey: String {
@@ -32,8 +32,8 @@ struct UserDefaultsHolder {
     static func getHackerUUID() -> HackerUUID? {
         if
             let publicUUID = UserDefaults.standard.string(forKey: self.publicUUIDKey),
-            let privateUUID = UserDefaults.standard.string(forKey: self.privateUUIDKey) {
-            return HackerUUID(publicUUID: publicUUID, privateUUID: privateUUID)
+            let authCode = UserDefaults.standard.string(forKey: self.authCodeKey) {
+            return HackerUUID(publicUUID: publicUUID, authCode: authCode)
         }
         
         return nil
@@ -41,12 +41,12 @@ struct UserDefaultsHolder {
     
     static func setUser(_ id: HackerUUID) {
         UserDefaults.standard.set(id.publicUUID, forKey: publicUUIDKey)
-        UserDefaults.standard.set(id.privateUUID, forKey: privateUUIDKey)
+        UserDefaults.standard.set(id.authCode, forKey: authCodeKey)
     }
     
     static func clearHackerData() {
         UserDefaults.standard.removeObject(forKey: publicUUIDKey)
-        UserDefaults.standard.removeObject(forKey: privateUUIDKey)
+        UserDefaults.standard.removeObject(forKey: authCodeKey)
         UserDefaults.standard.removeObject(forKey: profileImageKey)
     }
     

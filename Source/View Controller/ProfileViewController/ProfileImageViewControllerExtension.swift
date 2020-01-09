@@ -18,5 +18,5 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         self.present(imagePickerViewController, animated: true, completion: nil)
     }
     
-    // Mark: Camera Picker Delegate functions
+    // Mark: - Camera Picker Delegate functions
 }

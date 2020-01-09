@@ -69,6 +69,7 @@ internal class QRScannerViewController: UIViewController, AVCaptureMetadataOutpu
             try setupCaptureSession(captureDevice)
             view.bringSubviewToFront(cancelButton)
             view.bringSubviewToFront(alternativeLoginButton)
+            view.bringSubviewToFront(networkActivityIndicator)
             captureSession?.startRunning()
             setupQRFrame()
         } catch {
@@ -148,21 +149,22 @@ internal class QRScannerViewController: UIViewController, AVCaptureMetadataOutpu
             detectionMessageLabel.text = "Invalid QR Code"
             qrCodeFrameView?.frame = CGRect.zero
             detectionMessageLabel.isHidden = false
+            networkActivityIndicator.stopAnimating()
             return
         }
         
-        print(publicUUID)
-        validateQRCode(publicUUID: publicUUID) { (privateUUID) in
+        validateQRCode(publicUUID: publicUUID) { (authCode) in
             self.networkActivityIndicator.stopAnimating()
             
-            guard let privateUUID = privateUUID else {
+            guard let authCode = authCode else {
                 self.detectionMessageLabel.text = "Invalid QR Code"
                 self.detectionMessageLabel.isHidden = false
                 self.scannedInvalidCodes.insert(publicUUID)
+                self.captureSession?.startRunning()
                 return
             }
             
-            UserDefaultsHolder.setUser(HackerUUID(publicUUID: publicUUID, privateUUID: privateUUID))
+            UserDefaultsHolder.setUser(HackerUUID(publicUUID: publicUUID, authCode: authCode))
             self.captureSession?.stopRunning()
             self.cancelButtonClicked(self.cancelButton as Any)
         }
@@ -175,8 +177,9 @@ internal class QRScannerViewController: UIViewController, AVCaptureMetadataOutpu
             return
         }
         
-        HackerRequestSingletonFunction.getHackerPrivateUUID(publicUUID: publicUUID) { (privateUUID) in
-            completion(privateUUID)
+        self.captureSession?.stopRunning()
+        HackerRequestSingletonFunction.loginHacker(publicUUID: publicUUID) { (authCode) in
+            completion(authCode)
             return
         }
         

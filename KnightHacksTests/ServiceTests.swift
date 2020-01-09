@@ -122,21 +122,26 @@ class ServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
-//    lazy var functions = Functions.functions()
-//    func testGetHacker() {
-//        let expectation = XCTestExpectation(description: "Done")
-//
-//        let data = ["publicUuid": "f71c95ae-3159-4ec0-8d07-fd00c740d87a"]
-//        functions.httpsCallable("loginHacker").call(data) { (results, error) in
-//            guard let res = results else {
-//                XCTFail()
-//                return
-//            }
-//            print(error)
-//            print(res.data)
-//            expectation.fulfill()
-//        }
-//
-//        wait(for: [expectation], timeout: 10.0)
-//    }
+    func testHackerAuthentication() {
+        let expectation = XCTestExpectation(description: "Cycle complete")
+        let input = "27f2452b-f216-4d2a-925a-c19be8bdbef3"
+        
+        HackerRequestSingletonFunction.loginHacker(publicUUID: input) { (authCode) in
+            guard let authCode = authCode else {
+                XCTFail()
+                return
+            }
+            
+            HackerRequestSingletonFunction.logoutHacker(publicUUID: input, authCode: authCode, completion: { (didLogout) in
+                guard didLogout else {
+                    XCTFail()
+                    return
+                }
+                
+                expectation.fulfill()
+            })
+        }
+        
+        wait(for: [expectation], timeout: 20)
+    }
 }

@@ -39,18 +39,6 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
         self.viewModel.fetchScheduleData()
     }
     
-    // Map button press event
-    @objc func buttonClicked(_ button: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController")
-        
-        // Remove button
-        button.removeFromSuperview()
-        
-        // Navigate to map view controller
-        navigationController?.pushViewController(nextViewController, animated: true)
-    }
-    
     // MARK: - Filter Delegate
     
     func didSelectFilter(filter: FilterMenuModel) {

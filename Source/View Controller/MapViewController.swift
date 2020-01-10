@@ -14,10 +14,6 @@ internal class MapViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
-
-    @IBAction func closeButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,5 +42,9 @@ internal class MapViewController: UIViewController, UIScrollViewDelegate {
         ImageRequestSingleton.firebaseGetImage(reference: mapImageURL) { (image) in
             self.mapImage.image = image
         }
+    }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }

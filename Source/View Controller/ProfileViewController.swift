@@ -38,6 +38,9 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     @IBOutlet weak var confirmLogoutBackgroundView: UIView!
     internal var coverView: UIView?
     
+    // activity outlets
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     internal var viewModel: ProfileViewControllerModel = ProfileViewControllerModel()
     
     private var isUserLoggedIn: Bool! {
@@ -172,15 +175,27 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     }
     
     @IBAction func confirmLogoutTapped(_ sender: Any) {
+        self.activityIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
+        
         viewModel.logoutHacker { (didLogout) in
             guard didLogout else {
+                self.view.isUserInteractionEnabled = true
+                self.activityIndicator.stopAnimating()
                 return
             }
             
+            self.view.isUserInteractionEnabled = true
             UserDefaultsHolder.clearHackerData()
+            self.activityIndicator.stopAnimating()
+            
             self.updateView()
             self.hideConfirmLogoutPanel()
             self.isUserLoggedIn = false
         }
+    }
+    
+    @IBAction func cancelConfirmLogoutPanelTapped(_ sender: Any) {
+        hideConfirmLogoutPanel()
     }
 }

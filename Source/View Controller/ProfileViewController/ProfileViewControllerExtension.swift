@@ -36,7 +36,7 @@ extension ProfileViewController {
             return
         }
         
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.37, delay: 0, options: .curveEaseOut, animations: {
             self.controlActiveSessionNavigation()
         })
     }
@@ -67,7 +67,7 @@ extension ProfileViewController {
             return
         }
         
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.37, delay: 0, options: .curveEaseOut, animations: {
             self.controlNonActiveSessionNavigation()
         }) { _ in
             UIView.animate(withDuration: 0.2, animations: {

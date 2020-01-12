@@ -858,17 +858,35 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOS-mt-kAJ" userLabel="Confirm Logout Cancel Button">
+                                        <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="rau-fx-KvT"/>
+                                            <constraint firstAttribute="width" constant="44" id="x8N-29-54v"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                        <state key="normal" image="cancel"/>
+                                        <connections>
+                                            <action selector="cancelConfirmLogoutPanelTapped:" destination="Qh0-oB-9Ji" eventType="touchUpInside" id="mZc-gt-3vP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="mTH-Ff-kFb" firstAttribute="centerX" secondItem="JTk-aN-FyG" secondAttribute="centerX" id="24R-s9-6dE"/>
                                     <constraint firstAttribute="bottom" secondItem="d72-Nr-vEh" secondAttribute="bottom" constant="42" id="3XF-Ar-GdI"/>
                                     <constraint firstAttribute="height" constant="160" id="6UD-Y8-8Vc"/>
+                                    <constraint firstAttribute="trailing" secondItem="qOS-mt-kAJ" secondAttribute="trailing" id="HtT-yw-VFW"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="d72-Nr-vEh" secondAttribute="trailing" constant="35" id="L74-sy-7sv"/>
+                                    <constraint firstItem="qOS-mt-kAJ" firstAttribute="top" secondItem="JTk-aN-FyG" secondAttribute="top" id="LyE-KD-mir"/>
                                     <constraint firstItem="d72-Nr-vEh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="JTk-aN-FyG" secondAttribute="leading" constant="35" id="NEe-wM-pL1"/>
                                     <constraint firstItem="d72-Nr-vEh" firstAttribute="top" secondItem="mTH-Ff-kFb" secondAttribute="bottom" constant="12" id="vpH-0K-4W6"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mgF-mN-zaB">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.3411764706" green="0.33333333329999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -876,11 +894,13 @@
                             <constraint firstItem="IZ8-c2-T2v" firstAttribute="top" secondItem="NKN-V2-4R9" secondAttribute="top" id="ARk-Bi-Ixw"/>
                             <constraint firstItem="JTk-aN-FyG" firstAttribute="leading" secondItem="NKN-V2-4R9" secondAttribute="leading" id="AZT-Yg-CBS"/>
                             <constraint firstItem="Xb5-MS-xzA" firstAttribute="leading" secondItem="NKN-V2-4R9" secondAttribute="leading" id="G66-33-Qql"/>
+                            <constraint firstItem="mgF-mN-zaB" firstAttribute="centerX" secondItem="yww-R7-GUA" secondAttribute="centerX" id="J6M-SD-4ta"/>
                             <constraint firstAttribute="bottom" secondItem="Xb5-MS-xzA" secondAttribute="bottom" constant="-10" id="R6d-fv-Rmg"/>
                             <constraint firstItem="IZ8-c2-T2v" firstAttribute="width" secondItem="yww-R7-GUA" secondAttribute="width" id="Rkg-he-PGE"/>
                             <constraint firstItem="Xb5-MS-xzA" firstAttribute="top" secondItem="NKN-V2-4R9" secondAttribute="top" constant="270" identifier="SettingsTopAnchor" id="dRz-br-VlR" userLabel="SettingsTopAnchor"/>
                             <constraint firstItem="IZ8-c2-T2v" firstAttribute="centerX" secondItem="yww-R7-GUA" secondAttribute="centerX" id="jSx-A3-g6U"/>
                             <constraint firstAttribute="bottom" secondItem="JTk-aN-FyG" secondAttribute="bottom" constant="-10" id="mE8-DN-pRq"/>
+                            <constraint firstItem="mgF-mN-zaB" firstAttribute="centerY" secondItem="yww-R7-GUA" secondAttribute="centerY" id="wMy-Uz-Y1P"/>
                             <constraint firstItem="Xb5-MS-xzA" firstAttribute="trailing" secondItem="NKN-V2-4R9" secondAttribute="trailing" id="wqY-6S-KJW"/>
                             <constraint firstItem="JTk-aN-FyG" firstAttribute="trailing" secondItem="NKN-V2-4R9" secondAttribute="trailing" id="ySQ-Zr-gd2"/>
                         </constraints>
@@ -891,6 +911,7 @@
                         <outlet property="QRDisplayCenterView" destination="rwq-yw-rzc" id="ag6-O3-Arf"/>
                         <outlet property="QRDisplayNameLabel" destination="Kzd-JI-8jC" id="qQo-EH-EvS"/>
                         <outlet property="QRImageView" destination="ahs-dr-SDS" id="OXD-pp-pku"/>
+                        <outlet property="activityIndicator" destination="mgF-mN-zaB" id="pys-IG-g0x"/>
                         <outlet property="confirmLogoutBackgroundView" destination="JTk-aN-FyG" id="idl-ZH-Lhk"/>
                         <outlet property="confirmLogoutButton" destination="d72-Nr-vEh" id="B3F-we-fbb"/>
                         <outlet property="confirmLogoutPanelBottomAnchor" destination="mE8-DN-pRq" id="aaR-oa-wRB"/>

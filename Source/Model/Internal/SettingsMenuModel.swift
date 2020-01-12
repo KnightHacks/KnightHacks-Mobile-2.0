@@ -11,6 +11,7 @@ import Foundation
 enum SettingsMenuModelFunction {
     case automaticLogin
     case manualLogin
+    case presentQRCode
     case navigateNextViewController
     case logout
 }

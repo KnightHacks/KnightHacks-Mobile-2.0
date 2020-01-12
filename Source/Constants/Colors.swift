@@ -66,6 +66,7 @@ let LIGHT_BLUE_SHADE_COLOR = UIColor(hex: 0x0CB2FF, alpha: 1)
 let DARK_BLUE_SHADE_COLOR = UIColor(hex: 0x057AFF, alpha: 1)
 
 let PROFILE_BACKGROUND_COLOR = UIColor(red: 245, green: 245, blue: 249, a: 1)
+let OVERLAY_COLOR = UIColor(red: 130, green: 130, blue: 130, a: 0.2)
 
 public enum ColorSchemeName: String {
     case backgroundColor

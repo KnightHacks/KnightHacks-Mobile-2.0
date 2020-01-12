@@ -13,6 +13,9 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     internal static let identifier: String = "ProfileViewController"
     internal let activeSessionTopAnchor: CGFloat = 270
     internal let nonActiveSessionTopAnchor: CGFloat = 0
+    
+    internal let logoutRisenBottomAnchor: CGFloat = -10
+    internal let logoutHiddenBottomAnchor: CGFloat = -170
 
     @IBOutlet weak var profilePictureButton: UIButton!
     @IBOutlet weak var settingsBackgroundTopAnchor: NSLayoutConstraint!
@@ -21,9 +24,25 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var profileBackgroundImageView: UIView!
+    @IBOutlet weak var cameraIconImageView: UIImageView!
     
-    private var hackerUUID: HackerUUID?
-    private var viewModel: ProfileViewControllerModel = ProfileViewControllerModel(isActiveSession: false)
+    // QR Display Outlets
+    @IBOutlet weak var QRImageView: UIImageView!
+    @IBOutlet var QRDisplayBackgroundView: UIView!
+    @IBOutlet weak var logoutPopupView: UIView!
+    @IBOutlet weak var QRDisplayNameLabel: UILabel!
+    @IBOutlet weak var QRDisplayCenterView: UIView!
+    
+    // Confirm logout outlets
+    @IBOutlet weak var confirmLogoutButton: UIButton!
+    @IBOutlet weak var confirmLogoutPanelBottomAnchor: NSLayoutConstraint!
+    @IBOutlet weak var confirmLogoutBackgroundView: UIView!
+    internal var coverView: UIView?
+    
+    // activity outlets
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    internal var viewModel: ProfileViewControllerModel = ProfileViewControllerModel()
     
     private var isUserLoggedIn: Bool! {
         didSet {
@@ -50,6 +69,8 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         self.view.backgroundColor = PROFILE_BACKGROUND_COLOR
         self.settingsBackgroundTopAnchor.constant = nonActiveSessionTopAnchor
         self.view.layoutIfNeeded()
+        self.setupQRDisplayView()
+        self.setupConfirmLogoutPanel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,13 +78,6 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         setupProfilePictureButton()
         setupSettingsBackgroundAndTable()
         attemptToRetrieveUserData()
-        
-        if self.isUserLoggedIn {
-            setupActiveSessionNavigation(withAnimation: false)
-            // fetch hacker content
-        } else {
-            setupNonActiveSessionNavigation(withAnimation: false)
-        }
         settingsTableView.reloadData()
     }
     
@@ -76,15 +90,21 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     }
     
     private func attemptToRetrieveUserData() {
-        /*
-        **Note** Commented out temporarily
-        guard let hackerUUID = UserDefaultsHolder.getHackerUUID() else {
-            isUserLoggedIn = false
-            return
+        viewModel.reloadLocalSessionIfNeeded()
+        isUserLoggedIn = self.viewModel.hackerInfo != nil
+        
+        if self.isUserLoggedIn {
+            setupActiveSessionNavigation(withAnimation: false)
+            viewModel.reloadQRCodeImageIfNeeded()
+            viewModel.getHackerInfo { (didGetHackerInfo) in
+                if didGetHackerInfo {
+                    self.updateView()
+                    self.settingsTableView.reloadData()
+                }
+            }
+        } else {
+            setupNonActiveSessionNavigation(withAnimation: false)
         }
-        self.hackerUUID = hackerUUID
-        */
-        isUserLoggedIn = true
     }
     
     // MARK: Table View Datasource and Delegate
@@ -96,7 +116,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath) as? SettingsTableViewCell,
-            indexPath.row <  viewModel.tableContent.count
+            indexPath.row < viewModel.tableContent.count
         else {
             return UITableViewCell()
         }
@@ -106,10 +126,9 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.row <  viewModel.tableContent.count else {
+        guard indexPath.row < viewModel.tableContent.count else {
             return
         }
-        
         performModel(viewModel.tableContent[indexPath.row].function)
     }
     
@@ -117,6 +136,9 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         switch function {
         case .automaticLogin:
             presentQRScanner()
+            return
+        case .presentQRCode:
+            presentQRDisplay()
             return
         case .logout:
             logoutUser()
@@ -126,9 +148,12 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         }
     }
     
+    private func updateView() {
+        
+    }
+    
     private func logoutUser() {
-        UserDefaultsHolder.clearHackerData()
-        isUserLoggedIn = false
+        showConfirmLogoutPanel()
     }
     
     private func presentQRScanner() {
@@ -138,7 +163,40 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         self.present(nextViewController, animated: true, completion: nil)
     }
     
+    private func presentQRDisplay() {
+        showQRDisplayBackgroundView()
+    }
+    
     @IBAction func profilePictureButtonClicked(_ sender: Any) {
         presentCameraPickerViewController()
+    }
+    
+    @IBAction func QRDisplayCancelTapped(_ sender: Any) {
+        hideQRDisplayBackgroundView()
+    }
+    
+    @IBAction func confirmLogoutTapped(_ sender: Any) {
+        self.activityIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
+        
+        viewModel.logoutHacker { (didLogout) in
+            guard didLogout else {
+                self.view.isUserInteractionEnabled = true
+                self.activityIndicator.stopAnimating()
+                return
+            }
+            
+            self.view.isUserInteractionEnabled = true
+            UserDefaultsHolder.clearHackerData()
+            self.activityIndicator.stopAnimating()
+            
+            self.updateView()
+            self.hideConfirmLogoutPanel()
+            self.isUserLoggedIn = false
+        }
+    }
+    
+    @IBAction func cancelConfirmLogoutPanelTapped(_ sender: Any) {
+        hideConfirmLogoutPanel()
     }
 }

@@ -755,6 +755,10 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="dfo-5D-rf0">
+                                        <rect key="frame" x="210" y="142" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -837,20 +841,88 @@
                                     <constraint firstItem="nXz-TR-tdu" firstAttribute="top" secondItem="Xb5-MS-xzA" secondAttribute="top" constant="25" id="znU-Cn-fHM"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTk-aN-FyG" userLabel="Logout Popup View">
+                                <rect key="frame" x="0.0" y="662" width="375" height="160"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d72-Nr-vEh" userLabel="Confirm Logout Button">
+                                        <rect key="frame" x="35" y="77" width="305" height="41"/>
+                                        <color key="backgroundColor" red="0.98431372549019602" green="0.27843137254901962" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="6sL-Ej-14a"/>
+                                        </constraints>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="confirmLogoutTapped:" destination="Qh0-oB-9Ji" eventType="touchUpInside" id="uUk-fK-nMq"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to logout?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTH-Ff-kFb">
+                                        <rect key="frame" x="62.333333333333329" y="44.666666666666629" width="250.33333333333337" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOS-mt-kAJ" userLabel="Confirm Logout Cancel Button">
+                                        <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="rau-fx-KvT"/>
+                                            <constraint firstAttribute="width" constant="44" id="x8N-29-54v"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                        <state key="normal" image="cancel"/>
+                                        <connections>
+                                            <action selector="cancelConfirmLogoutPanelTapped:" destination="Qh0-oB-9Ji" eventType="touchUpInside" id="mZc-gt-3vP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mTH-Ff-kFb" firstAttribute="centerX" secondItem="JTk-aN-FyG" secondAttribute="centerX" id="24R-s9-6dE"/>
+                                    <constraint firstAttribute="bottom" secondItem="d72-Nr-vEh" secondAttribute="bottom" constant="42" id="3XF-Ar-GdI"/>
+                                    <constraint firstAttribute="height" constant="160" id="6UD-Y8-8Vc"/>
+                                    <constraint firstAttribute="trailing" secondItem="qOS-mt-kAJ" secondAttribute="trailing" id="HtT-yw-VFW"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="d72-Nr-vEh" secondAttribute="trailing" constant="35" id="L74-sy-7sv"/>
+                                    <constraint firstItem="qOS-mt-kAJ" firstAttribute="top" secondItem="JTk-aN-FyG" secondAttribute="top" id="LyE-KD-mir"/>
+                                    <constraint firstItem="d72-Nr-vEh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="JTk-aN-FyG" secondAttribute="leading" constant="35" id="NEe-wM-pL1"/>
+                                    <constraint firstItem="d72-Nr-vEh" firstAttribute="top" secondItem="mTH-Ff-kFb" secondAttribute="bottom" constant="12" id="vpH-0K-4W6"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mgF-mN-zaB">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.3411764706" green="0.33333333329999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="IZ8-c2-T2v" firstAttribute="top" secondItem="NKN-V2-4R9" secondAttribute="top" id="ARk-Bi-Ixw"/>
+                            <constraint firstItem="JTk-aN-FyG" firstAttribute="leading" secondItem="NKN-V2-4R9" secondAttribute="leading" id="AZT-Yg-CBS"/>
                             <constraint firstItem="Xb5-MS-xzA" firstAttribute="leading" secondItem="NKN-V2-4R9" secondAttribute="leading" id="G66-33-Qql"/>
+                            <constraint firstItem="mgF-mN-zaB" firstAttribute="centerX" secondItem="yww-R7-GUA" secondAttribute="centerX" id="J6M-SD-4ta"/>
                             <constraint firstAttribute="bottom" secondItem="Xb5-MS-xzA" secondAttribute="bottom" constant="-10" id="R6d-fv-Rmg"/>
                             <constraint firstItem="IZ8-c2-T2v" firstAttribute="width" secondItem="yww-R7-GUA" secondAttribute="width" id="Rkg-he-PGE"/>
                             <constraint firstItem="Xb5-MS-xzA" firstAttribute="top" secondItem="NKN-V2-4R9" secondAttribute="top" constant="270" identifier="SettingsTopAnchor" id="dRz-br-VlR" userLabel="SettingsTopAnchor"/>
                             <constraint firstItem="IZ8-c2-T2v" firstAttribute="centerX" secondItem="yww-R7-GUA" secondAttribute="centerX" id="jSx-A3-g6U"/>
+                            <constraint firstAttribute="bottom" secondItem="JTk-aN-FyG" secondAttribute="bottom" constant="-10" id="mE8-DN-pRq"/>
+                            <constraint firstItem="mgF-mN-zaB" firstAttribute="centerY" secondItem="yww-R7-GUA" secondAttribute="centerY" id="wMy-Uz-Y1P"/>
                             <constraint firstItem="Xb5-MS-xzA" firstAttribute="trailing" secondItem="NKN-V2-4R9" secondAttribute="trailing" id="wqY-6S-KJW"/>
+                            <constraint firstItem="JTk-aN-FyG" firstAttribute="trailing" secondItem="NKN-V2-4R9" secondAttribute="trailing" id="ySQ-Zr-gd2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NKN-V2-4R9"/>
                     </view>
                     <connections>
+                        <outlet property="QRDisplayBackgroundView" destination="KfY-iG-KUt" id="exi-UG-Jy9"/>
+                        <outlet property="QRDisplayCenterView" destination="rwq-yw-rzc" id="ag6-O3-Arf"/>
+                        <outlet property="QRDisplayNameLabel" destination="Kzd-JI-8jC" id="qQo-EH-EvS"/>
+                        <outlet property="QRImageView" destination="ahs-dr-SDS" id="OXD-pp-pku"/>
+                        <outlet property="activityIndicator" destination="mgF-mN-zaB" id="pys-IG-g0x"/>
+                        <outlet property="cameraIconImageView" destination="dfo-5D-rf0" id="yaW-Uh-fW8"/>
+                        <outlet property="confirmLogoutBackgroundView" destination="JTk-aN-FyG" id="idl-ZH-Lhk"/>
+                        <outlet property="confirmLogoutButton" destination="d72-Nr-vEh" id="B3F-we-fbb"/>
+                        <outlet property="confirmLogoutPanelBottomAnchor" destination="mE8-DN-pRq" id="aaR-oa-wRB"/>
+                        <outlet property="logoutPopupView" destination="JTk-aN-FyG" id="27Z-HB-is2"/>
                         <outlet property="pointsLabel" destination="xwc-cD-IrB" id="wmi-XP-GtB"/>
                         <outlet property="profileBackgroundImageView" destination="IZ8-c2-T2v" id="ieL-lH-suF"/>
                         <outlet property="profileNameLabel" destination="ScW-2g-cgL" id="seY-xm-Gvs"/>
@@ -861,8 +933,75 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbp-xB-03v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="KfY-iG-KUt" userLabel="QRDisplayBackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwq-yw-rzc" userLabel="QRDisplayView">
+                            <rect key="frame" x="0.0" y="221.99999999999997" width="375" height="368.33333333333326"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlF-mM-Zn9" userLabel="Cancel">
+                                    <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Gpg-HF-0Ng"/>
+                                        <constraint firstAttribute="width" constant="44" id="imu-W3-sSn"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ngi-i6-qZs"/>
+                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="44" id="wef-Hu-j5z"/>
+                                        <constraint firstAttribute="height" constant="44" id="xNX-mJ-8P3"/>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="zCO-86-sF3"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                    <state key="normal" image="cancel">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="QRDisplayCancelTapped:" destination="Qh0-oB-9Ji" eventType="touchUpInside" id="ynv-FX-sh8"/>
+                                    </connections>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oPA-Vx-25c">
+                                    <rect key="frame" x="2" y="44" width="371" height="280.33333333333331"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahs-dr-SDS" userLabel="QRImageView">
+                                            <rect key="frame" x="60.666666666666657" y="0.0" width="249.99999999999997" height="250"/>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="250" id="Xyg-Nw-uwQ"/>
+                                                <constraint firstAttribute="height" constant="250" id="ppc-KH-lPx"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzd-JI-8jC" userLabel="Name Label">
+                                            <rect key="frame" x="178.66666666666666" y="260" width="14" height="20.333333333333314"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="tlF-mM-Zn9" secondAttribute="trailing" id="4Ik-Jg-dJo"/>
+                                <constraint firstItem="tlF-mM-Zn9" firstAttribute="top" secondItem="rwq-yw-rzc" secondAttribute="top" id="OhZ-xL-3aR"/>
+                                <constraint firstAttribute="trailing" secondItem="oPA-Vx-25c" secondAttribute="trailing" constant="2" id="Pa2-pq-KEt"/>
+                                <constraint firstAttribute="bottom" secondItem="oPA-Vx-25c" secondAttribute="bottom" constant="44" id="ddG-tk-dXq"/>
+                                <constraint firstItem="oPA-Vx-25c" firstAttribute="top" secondItem="tlF-mM-Zn9" secondAttribute="bottom" id="fMV-yA-8cQ"/>
+                                <constraint firstItem="oPA-Vx-25c" firstAttribute="leading" secondItem="rwq-yw-rzc" secondAttribute="leading" constant="2" id="tWf-28-tvK"/>
+                            </constraints>
+                            <viewLayoutGuide key="safeArea" id="oZg-AD-7t5"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="rwq-yw-rzc" firstAttribute="centerX" secondItem="KfY-iG-KUt" secondAttribute="centerX" id="NBL-hG-2sl"/>
+                        <constraint firstItem="rwq-yw-rzc" firstAttribute="centerY" secondItem="KfY-iG-KUt" secondAttribute="centerY" id="fSS-eZ-KeU"/>
+                        <constraint firstItem="rwq-yw-rzc" firstAttribute="width" secondItem="KfY-iG-KUt" secondAttribute="width" id="qqk-8b-Pa6"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="1J7-5j-5Im"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="3433" y="732"/>
+            <point key="canvasLocation" x="3432.8000000000002" y="731.5270935960591"/>
         </scene>
         <!--MapViewController-->
         <scene sceneID="wef-fS-M3z">
@@ -988,8 +1127,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="RqU-Ct-z96">
-                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RqU-Ct-z96">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.3411764706" green="0.33333333329999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1021,6 +1161,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="1074" height="1086"/>
+        <image name="cancel" width="256" height="256"/>
         <image name="kh-blue" width="125" height="128"/>
         <image name="knight_hacks_gold_image" width="51" height="51"/>
         <image name="map" width="1316" height="930"/>

@@ -34,8 +34,10 @@ internal class SettingsTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) { }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        if let baseColor = self.backgroundColor?.rgba {
-            self.backgroundColor = UIColor(red: baseColor.red, green: baseColor.green, blue: baseColor.blue, alpha: highlighted ? 0.65 : 1)
+        if highlighted {
+            self.customBackgroundView.backgroundColor = UIColor(red: 241, green: 241, blue: 241, a: 1)
+        } else {
+            self.customBackgroundView.backgroundColor = .white
         }
     }
     

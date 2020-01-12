@@ -13,6 +13,17 @@ extension ProfileViewController {
     internal func setupProfilePictureButton() {
         self.profilePictureButton.layer.cornerRadius = self.profilePictureButton.frame.height / 2
         self.profilePictureButton.clipsToBounds = true
+        
+        self.cameraIconImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.cameraIconImageView.trailingAnchor.constraint(equalTo: self.profilePictureButton.trailingAnchor, constant: 0).isActive = true
+        self.cameraIconImageView.bottomAnchor.constraint(equalTo: self.profilePictureButton.bottomAnchor, constant: 0).isActive = true
+        self.cameraIconImageView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        self.cameraIconImageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        self.cameraIconImageView.clipsToBounds = true
+        self.cameraIconImageView.contentMode = .scaleAspectFit
+        self.cameraIconImageView.layer.cornerRadius = 25 / 2
+        self.cameraIconImageView.layer.borderWidth = 0.5
+        self.cameraIconImageView.layer.borderColor = PROFILE_BACKGROUND_COLOR.cgColor
     }
     
     private func controlActiveSessionNavigation() {

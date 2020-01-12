@@ -24,6 +24,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var profileBackgroundImageView: UIView!
+    @IBOutlet weak var cameraIconImageView: UIImageView!
     
     // QR Display Outlets
     @IBOutlet weak var QRImageView: UIImageView!

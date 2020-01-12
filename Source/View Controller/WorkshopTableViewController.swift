@@ -75,8 +75,7 @@ internal class WorkshopTableViewController: NavigationBarTableViewController, Na
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: WorkshopTableViewCell.identifier, for: indexPath) as? WorkshopTableViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WorkshopTableViewCell.identifier, for: indexPath) as? WorkshopTableViewCell,
             indexPath.section < viewModel.viewContent.count,
             indexPath.row < viewModel.viewContent[indexPath.section].count else {
             return UITableViewCell()
@@ -90,5 +89,19 @@ internal class WorkshopTableViewController: NavigationBarTableViewController, Na
     
     func didFetchModel() {
         tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: MapViewController.identifier) as? MapViewController
+            else {
+                print("ERROR: View controller not found")
+                return
+            }
+        
+        // TO DO: Pass map image url to mapViewController
+        //let mapImageURL = viewModel.viewContent[indexPath.section][indexPath.row].mapImage
+        //mapViewController.setImage(mapImageURL)
+        
+        present(mapViewController, animated: true, completion: nil)
     }
 }

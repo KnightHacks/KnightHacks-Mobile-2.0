@@ -18,7 +18,6 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
     private var viewModel: ScheduleTableViewControllerModel!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         self.viewModel = ScheduleTableViewControllerModel()
@@ -83,6 +82,20 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
         
         cell.model = viewModel.viewContent[indexPath.section][indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: MapViewController.identifier) as? MapViewController
+            else {
+                print("ERROR: View controller not found")
+                return
+        }
+        
+        // TO DO: Pass map image url to mapViewController
+        //let mapImageURL = viewModel.viewContent[indexPath.section][indexPath.row].mapImage
+        //mapViewController.setImage(mapImageURL)
+        
+        present(mapViewController, animated: true, completion: nil)
     }
     
     // MARK: - View model delegate

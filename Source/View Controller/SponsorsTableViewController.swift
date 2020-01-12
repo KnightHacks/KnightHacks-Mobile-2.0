@@ -56,8 +56,7 @@ internal class SponsorsTableViewController: NavigationBarTableViewController, Na
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: SponsorsTableViewCell.identifier, for: indexPath) as? SponsorsTableViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SponsorsTableViewCell.identifier, for: indexPath) as? SponsorsTableViewCell,
             indexPath.row < viewModel.viewContent.count else {
             return UITableViewCell()
         }

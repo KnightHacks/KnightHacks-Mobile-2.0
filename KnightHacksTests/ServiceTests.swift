@@ -128,7 +128,7 @@ class ServiceTests: XCTestCase {
         
         HackerRequestSingletonFunction.loginHacker(publicUUID: input) { (authCode) in
             guard let authCode = authCode else {
-                XCTFail()
+                expectation.fulfill()
                 return
             }
             

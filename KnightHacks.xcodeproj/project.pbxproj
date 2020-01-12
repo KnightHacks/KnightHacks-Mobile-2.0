@@ -400,7 +400,6 @@
 				4C367A9F22E578AA0006CD2F /* LiveUpdatesTableViewController.swift */,
 				4C40CA0A22EE63A600ECD930 /* FrequentlyAskedViewController.swift */,
 				E5FEB25B23788BAB004CFDEE /* MapViewController.swift */,
-				4C10F59D23C505EF00645D60 /* ProfileViewController.swift */,
 				4C97CAEF23BAA37800DC4A02 /* QRScannerViewController.swift */,
 				4C63DEC223AFF2AB003FD5EF /* AnimationViewController.swift */,
 			);
@@ -473,6 +472,7 @@
 		4C484F0B23BFD35900234146 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4C10F59D23C505EF00645D60 /* ProfileViewController.swift */,
 				4C484F0C23BFD37A00234146 /* ProfileViewControllerExtension.swift */,
 				4C4555B823C2642700BD0718 /* ProfileImageViewControllerExtension.swift */,
 				4C281AB723C58CBB000397C7 /* ProfileViewControllerPopupExtension.swift */,

@@ -19,4 +19,17 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     // MARK: - Camera Picker Delegate functions
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let imageSelected = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            profilePictureButton.imageView?.image = imageSelected
+            profilePictureButton.imageView?.contentMode = .scaleAspectFit
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

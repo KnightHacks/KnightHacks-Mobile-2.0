@@ -26,7 +26,6 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         actionSheet.addAction(takePictureAction)
         actionSheet.addAction(cancelAction)
         
-        
         self.present(actionSheet, animated: true)
     }
     

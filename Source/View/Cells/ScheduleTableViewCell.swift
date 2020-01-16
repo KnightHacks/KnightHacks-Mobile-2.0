@@ -16,6 +16,7 @@ internal class ScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var mapIndicator: UIImageView!
     
     var model: ScheduleModel? {
         didSet {
@@ -23,6 +24,13 @@ internal class ScheduleTableViewCell: UITableViewCell {
             eventTitleLabel.text = model.title
             timeLabel.text = model.time
             locationLabel.text = model.location
+            mapIndicator.isHidden = true
+            
+            // TO DO: Enable functionality by removing comments after map images are added to database
+            // Shows map indicator if map is available
+            //if model.imageURL != nil {
+            //    mapIndicator.isHidden = false
+            //}
         }
     }
     

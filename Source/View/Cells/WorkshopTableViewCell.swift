@@ -18,6 +18,7 @@ internal class WorkshopTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tagStack: UIStackView!
+    @IBOutlet weak var mapIndicator: UIImageView!
     
     var model: WorkshopModel? {
         didSet {
@@ -26,8 +27,15 @@ internal class WorkshopTableViewCell: UITableViewCell {
             titleLabel.text = model.title
             timeLabel.text = model.time
             descriptionLabel.text = model.description
+            mapIndicator.isHidden = true
             addTags(model.filters)
             
+            // TO DO: Enable functionality by removing comments after map images are added to database
+            // Shows map indicator if map is available
+            //if model.imageURL != nil {
+            //    mapIndicator.isHidden = false
+            //}
+                
             guard let url = model.imageURL else { return }
             ImageRequestSingleton.firebaseGetImage(reference: url) { (image) in
                 if let image = image {

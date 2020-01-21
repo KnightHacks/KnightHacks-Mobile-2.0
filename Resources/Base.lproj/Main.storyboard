@@ -298,7 +298,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBW-6a-pIQ" userLabel="Tag Stack">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="XBW-6a-pIQ" userLabel="Tag Stack">
                                                                     <rect key="frame" x="0.0" y="66.666666666666686" width="287" height="20.333333333333329"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHf-Dw-nx6">

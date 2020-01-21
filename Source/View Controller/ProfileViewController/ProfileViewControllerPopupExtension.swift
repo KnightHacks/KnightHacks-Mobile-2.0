@@ -94,3 +94,49 @@ extension ProfileViewController {
         hideConfirmLogoutPanel()
     }
 }
+
+extension ProfileViewController: AlternativeLoginViewDelegate {
+    
+    func handleLoginResponse(_ authCode: String) {
+        viewWillAppear(true)
+        hideAlternativeLogin()
+    }
+    
+    func handleCloseView() {
+        hideAlternativeLogin()
+    }
+    
+    internal func showAlternativeLogin() {
+        
+        self.alternativeLoginView = AlternativeLoginView(frame: self.view.bounds)
+        self.alternativeLoginView?.delegate = self
+        guard let alternativeLoginView = self.alternativeLoginView else {
+            return
+        }
+        
+        alternativeLoginView.alpha = 0
+        alternativeLoginView.isUserInteractionEnabled = false
+        boundEdges(of: alternativeLoginView, to: self.view, with: UIEdgeInsets.zero)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            alternativeLoginView.alpha = 1
+        }) { (_) in
+            alternativeLoginView.isUserInteractionEnabled = true
+        }
+    }
+    
+    internal func hideAlternativeLogin() {
+        guard let alternativeLoginView = self.alternativeLoginView else {
+            return
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            alternativeLoginView.alpha = 0
+        }) { (_) in
+            alternativeLoginView.isHidden = true
+            alternativeLoginView.removeFromSuperview()
+            alternativeLoginView.isUserInteractionEnabled = false
+            self.alternativeLoginView = nil
+        }
+    }
+}

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R1j-gj-Cpt">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R1j-gj-Cpt">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -730,7 +728,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="b7K-JX-hlG">
                                         <rect key="frame" x="115.66666666666669" y="74.666666666666671" width="144" height="140.66666666666663"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZb-Aw-LVW" userLabel="Profile Picture Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZb-Aw-LVW" userLabel="Profile Picture Button">
                                                 <rect key="frame" x="26.999999999999986" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" red="0.1570722058" green="0.17859484370000001" blue="0.2892409581" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -767,7 +765,7 @@
                                     <constraint firstItem="b7K-JX-hlG" firstAttribute="centerY" secondItem="IZ8-c2-T2v" secondAttribute="centerY" id="uaD-qq-lIZ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xb5-MS-xzA" userLabel="Settings Background">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xb5-MS-xzA" userLabel="Settings Background">
                                 <rect key="frame" x="0.0" y="314" width="375" height="508"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nXz-TR-tdu">
@@ -912,6 +910,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NKN-V2-4R9"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WGF-oZ-6p3"/>
                     <connections>
                         <outlet property="QRDisplayBackgroundView" destination="KfY-iG-KUt" id="exi-UG-Jy9"/>
                         <outlet property="QRDisplayCenterView" destination="rwq-yw-rzc" id="ag6-O3-Arf"/>

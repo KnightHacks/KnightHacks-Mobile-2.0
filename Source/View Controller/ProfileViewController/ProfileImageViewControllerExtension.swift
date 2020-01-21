@@ -11,11 +11,11 @@ import UIKit
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showUIImagePickerControllerActionSheet() {
-        let imageFromLibraryAction = UIAlertAction(title: "Choose from Library", style: .default) { (action) in
+        let imageFromLibraryAction = UIAlertAction(title: "Choose from Library", style: .default) { (_) in
             self.presentCameraPickerViewController(source: .photoLibrary)
         }
         
-        let takePictureAction = UIAlertAction(title: "Take Photo", style: .default) { (action) in
+        let takePictureAction = UIAlertAction(title: "Take Photo", style: .default) { (_) in
             self.presentCameraPickerViewController(source: .camera)
         }
         
@@ -33,7 +33,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         let imagePickerViewController = UIImagePickerController()
         imagePickerViewController.delegate = self
         imagePickerViewController.allowsEditing = true
-        imagePickerViewController.sourceType = .photoLibrary
+        imagePickerViewController.sourceType = source
         self.present(imagePickerViewController, animated: true, completion: nil)
     }
     
@@ -41,8 +41,9 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imageSelected = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            profilePictureButton.imageView?.image = imageSelected
-            profilePictureButton.imageView?.contentMode = .scaleAspectFit
+            profilePictureButton.tintColor = .clear
+            profilePictureButton.setImage(imageSelected, for: .normal)
+            profilePictureButton.imageView?.contentMode = .scaleAspectFill
         }
         
         dismiss(animated: true, completion: nil)

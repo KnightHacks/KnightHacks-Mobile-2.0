@@ -168,7 +168,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     }
     
     @IBAction func profilePictureButtonClicked(_ sender: Any) {
-        presentCameraPickerViewController()
+        showUIImagePickerControllerActionSheet()
     }
     
     @IBAction func QRDisplayCancelTapped(_ sender: Any) {

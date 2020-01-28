@@ -37,7 +37,9 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     @IBOutlet weak var confirmLogoutButton: UIButton!
     @IBOutlet weak var confirmLogoutPanelBottomAnchor: NSLayoutConstraint!
     @IBOutlet weak var confirmLogoutBackgroundView: UIView!
+    
     internal var coverView: UIView?
+    var alternativeLoginView: AlternativeLoginView?
     
     // activity outlets
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -71,14 +73,39 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         self.view.layoutIfNeeded()
         self.setupQRDisplayView()
         self.setupConfirmLogoutPanel()
+        self.setupNameAndPointsLabals()
+        self.setupProfileBackgroundImage()
+        self.setupSettingsBackgroundAndTable()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupProfilePictureButton()
-        setupSettingsBackgroundAndTable()
         attemptToRetrieveUserData()
         settingsTableView.reloadData()
+    }
+    
+    private func setupProfileBackgroundImage() {
+        let imageView = UIImageView(image: UIImage(named: "profile-picture-background"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        profileBackgroundImageView.insertSubview(imageView, at: 0)
+        imageView.topAnchor.constraint(equalTo: profileBackgroundImageView.topAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: profileBackgroundImageView.trailingAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: profileBackgroundImageView.leadingAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: profileBackgroundImageView.bottomAnchor).isActive = true
+    }
+    
+    private func setupNameAndPointsLabals() {
+        profileNameLabel.textColor = BACKGROUND_COLOR
+        pointsLabel.textColor = BACKGROUND_COLOR
+        pointsLabel.layer.cornerRadius = 15
+        pointsLabel.clipsToBounds = true
+        pointsLabel.layoutIfNeeded()
+        
+        if let image = UserDefaultsHolder.getProfileImage() {
+            profilePictureButton.setImage(image, for: .normal)
+        }
     }
     
     private func setupSettingsBackgroundAndTable() {
@@ -86,7 +113,6 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         self.settingsTableView.dataSource = self
         addSpecifiedShadow(self.settingsBackgroundView)
         self.settingsBackgroundView.clipsToBounds = true
-        self.settingsBackgroundView.layer.cornerRadius = 28
     }
     
     private func attemptToRetrieveUserData() {
@@ -137,6 +163,9 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         case .automaticLogin:
             presentQRScanner()
             return
+        case .manualLogin:
+            showAlternativeLogin()
+            return
         case .presentQRCode:
             presentQRDisplay()
             return
@@ -179,13 +208,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         self.activityIndicator.startAnimating()
         self.view.isUserInteractionEnabled = false
         
-        viewModel.logoutHacker { (didLogout) in
-            guard didLogout else {
-                self.view.isUserInteractionEnabled = true
-                self.activityIndicator.stopAnimating()
-                return
-            }
-            
+        viewModel.logoutHacker { (_) in
             self.view.isUserInteractionEnabled = true
             UserDefaultsHolder.clearHackerData()
             self.activityIndicator.stopAnimating()

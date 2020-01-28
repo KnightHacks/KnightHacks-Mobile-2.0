@@ -57,11 +57,12 @@ extension ProfileViewController {
     }
     
     internal func showConfirmLogoutPanel() {
+        self.addGestureRecognizer()
         UIView.animate(withDuration: 0.3, animations: {
             self.confirmLogoutPanelBottomAnchor.constant = self.logoutRisenBottomAnchor
             self.view.layoutIfNeeded()
         }) { (_) in
-            self.addGestureRecognizer()
+            self.coverView?.isUserInteractionEnabled = true
         }
     }
     
@@ -83,14 +84,60 @@ extension ProfileViewController {
         coverView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(respondToScreenTapped)))
         self.view.addSubview(coverView)
         self.view.bringSubviewToFront(self.confirmLogoutBackgroundView)
-
+        self.coverView?.isUserInteractionEnabled = false
         self.coverView = coverView
-        UIView.animate(withDuration: 0.13) {
+        UIView.animate(withDuration: 0.3) {
             self.coverView?.backgroundColor = OVERLAY_COLOR
         }
     }
     
     @objc private func respondToScreenTapped() {
         hideConfirmLogoutPanel()
+    }
+}
+
+extension ProfileViewController: AlternativeLoginViewDelegate {
+    
+    func handleLoginResponse(_ authCode: String) {
+        viewWillAppear(true)
+        hideAlternativeLogin()
+    }
+    
+    func handleCloseView() {
+        hideAlternativeLogin()
+    }
+    
+    internal func showAlternativeLogin() {
+        
+        self.alternativeLoginView = AlternativeLoginView(frame: self.view.bounds)
+        self.alternativeLoginView?.delegate = self
+        guard let alternativeLoginView = self.alternativeLoginView else {
+            return
+        }
+        
+        alternativeLoginView.alpha = 0
+        alternativeLoginView.isUserInteractionEnabled = false
+        boundEdges(of: alternativeLoginView, to: self.view, with: UIEdgeInsets.zero)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            alternativeLoginView.alpha = 1
+        }) { (_) in
+            alternativeLoginView.isUserInteractionEnabled = true
+        }
+    }
+    
+    internal func hideAlternativeLogin() {
+        guard let alternativeLoginView = self.alternativeLoginView else {
+            return
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            alternativeLoginView.alpha = 0
+        }) { (_) in
+            alternativeLoginView.isHidden = true
+            alternativeLoginView.removeFromSuperview()
+            alternativeLoginView.isUserInteractionEnabled = false
+            self.alternativeLoginView = nil
+        }
     }
 }

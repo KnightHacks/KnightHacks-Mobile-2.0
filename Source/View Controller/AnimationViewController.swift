@@ -28,6 +28,7 @@ public class AnimationHolder: UIViewController {
     
     override public func viewDidAppear(_ animated: Bool) {
         let starAnimation = Animation.named("light-launch-animation")
+        animationView.animationSpeed = 1.3
         animationView.animation = starAnimation
         animationView.contentMode = .scaleAspectFit
         animationView.play { (_) in

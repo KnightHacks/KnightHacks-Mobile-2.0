@@ -38,7 +38,6 @@ internal class SponsorsTableViewController: NavigationBarTableViewController, Na
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.filterCollectionView.shouldStartLoadingAnimation = true
     }
     
     // MARK: - Filter Delegate

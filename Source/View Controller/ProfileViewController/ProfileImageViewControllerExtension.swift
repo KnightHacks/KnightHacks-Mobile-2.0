@@ -39,11 +39,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     // MARK: - Camera Picker Delegate functions
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             profilePictureButton.tintColor = .clear
             profilePictureButton.setImage(imageSelected, for: .normal)
             profilePictureButton.imageView?.contentMode = .scaleAspectFill
+            _ = UserDefaultsHolder.set(profileImage: imageSelected)
         }
         
         dismiss(animated: true, completion: nil)

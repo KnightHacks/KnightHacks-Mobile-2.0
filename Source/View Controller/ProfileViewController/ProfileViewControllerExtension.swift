@@ -36,6 +36,7 @@ extension ProfileViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.profileBackgroundImageView.backgroundColor = PROFILE_BACKGROUND_COLOR
         self.settingsBackgroundTopAnchor.constant = self.activeSessionTopAnchor
+        self.settingsBackgroundView.layer.cornerRadius = 28
         self.view.layoutIfNeeded()
     }
     
@@ -58,6 +59,7 @@ extension ProfileViewController {
         self.navigationItem.title = "Profile"
         self.navigationController?.navigationBar.tintColor = .white
         self.settingsBackgroundTopAnchor.constant = self.nonActiveSessionTopAnchor
+        self.settingsBackgroundView.layer.cornerRadius = 0
         self.view.layoutIfNeeded()
         
         if #available(iOS 11, *) {

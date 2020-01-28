@@ -73,6 +73,8 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         self.view.layoutIfNeeded()
         self.setupQRDisplayView()
         self.setupConfirmLogoutPanel()
+        self.setupNameAndPointsLabals()
+        self.setupProfileBackgroundImage()
         self.setupSettingsBackgroundAndTable()
     }
     
@@ -81,6 +83,25 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         setupProfilePictureButton()
         attemptToRetrieveUserData()
         settingsTableView.reloadData()
+    }
+    
+    private func setupProfileBackgroundImage() {
+        let imageView = UIImageView(image: UIImage(named: "profile-picture-background"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        profileBackgroundImageView.insertSubview(imageView, at: 0)
+        imageView.topAnchor.constraint(equalTo: profileBackgroundImageView.topAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: profileBackgroundImageView.trailingAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: profileBackgroundImageView.leadingAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: profileBackgroundImageView.bottomAnchor).isActive = true
+    }
+    
+    private func setupNameAndPointsLabals() {
+        profileNameLabel.textColor = BACKGROUND_COLOR
+        pointsLabel.textColor = BACKGROUND_COLOR
+        pointsLabel.layer.cornerRadius = 15
+        pointsLabel.clipsToBounds = true
+        pointsLabel.layoutIfNeeded()
     }
     
     private func setupSettingsBackgroundAndTable() {
@@ -183,13 +204,13 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         self.activityIndicator.startAnimating()
         self.view.isUserInteractionEnabled = false
         
-        viewModel.logoutHacker { (didLogout) in
-            guard didLogout else {
-                self.view.isUserInteractionEnabled = true
-                self.activityIndicator.stopAnimating()
-                return
-            }
-            
+        viewModel.logoutHacker { (_) in
+//            guard didLogout else {
+//                self.view.isUserInteractionEnabled = true
+//                self.activityIndicator.stopAnimating()
+//                return
+//            }
+//
             self.view.isUserInteractionEnabled = true
             UserDefaultsHolder.clearHackerData()
             self.activityIndicator.stopAnimating()

@@ -11,16 +11,16 @@ import UIKit
 internal class ProfileViewControllerModel {
     
     private let nonActiveSessionMenuItems = [
-        SettingsMenuModel(function: .automaticLogin, title: "Scan QR Code to Login", imageName: "kh-blue"),
-        SettingsMenuModel(function: .manualLogin, title: "Enter ID to Login", imageName: "kh-blue"),
-        SettingsMenuModel(function: .navigateNextViewController, title: "My Notification Settings", imageName: "kh-blue")
+        SettingsMenuModel(function: .automaticLogin, title: "Scan QR Code to Login", imageName: "profile-menu-qr"),
+        SettingsMenuModel(function: .manualLogin, title: "Enter ID to Login", imageName: "profile-menu-code"),
+        SettingsMenuModel(function: .navigateNextViewController, title: "My Notification Settings", imageName: "profile-menu-notifications")
     ]
     
     private let activeSessionMenuItems = [
-        SettingsMenuModel(function: .presentQRCode, title: "Show my QR Code", imageName: "kh-blue"),
-        SettingsMenuModel(function: .navigateNextViewController, title: "My Groups", imageName: "kh-blue"),
-        SettingsMenuModel(function: .navigateNextViewController, title: "My Notifications", imageName: "kh-blue"),
-        SettingsMenuModel(function: .logout, title: "Logout", imageName: "kh-blue")
+        SettingsMenuModel(function: .presentQRCode, title: "Show my QR Code", imageName: "profile-menu-qr"),
+        SettingsMenuModel(function: .navigateNextViewController, title: "My Groups", imageName: "profile-menu-groups"),
+        SettingsMenuModel(function: .navigateNextViewController, title: "My Notification Settings", imageName: "profile-menu-notifications"),
+        SettingsMenuModel(function: .logout, title: "Logout", imageName: "profile-menu-logout")
     ]
     
     internal private(set) var tableContent: [SettingsMenuModel] = []

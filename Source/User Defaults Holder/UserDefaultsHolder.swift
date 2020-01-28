@@ -39,6 +39,10 @@ struct UserDefaultsHolder {
         return nil
     }
     
+    static func exists(_ key: RequestKey) -> Bool {
+        return UserDefaults.standard.value(forKey: key.rawValue) != nil
+    }
+    
     static func setUser(_ id: HackerUUID) {
         UserDefaults.standard.set(id.publicUUID, forKey: publicUUIDKey)
         UserDefaults.standard.set(id.authCode, forKey: authCodeKey)

@@ -57,11 +57,12 @@ extension ProfileViewController {
     }
     
     internal func showConfirmLogoutPanel() {
+        self.addGestureRecognizer()
         UIView.animate(withDuration: 0.3, animations: {
             self.confirmLogoutPanelBottomAnchor.constant = self.logoutRisenBottomAnchor
             self.view.layoutIfNeeded()
         }) { (_) in
-            self.addGestureRecognizer()
+            self.coverView?.isUserInteractionEnabled = true
         }
     }
     
@@ -83,9 +84,9 @@ extension ProfileViewController {
         coverView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(respondToScreenTapped)))
         self.view.addSubview(coverView)
         self.view.bringSubviewToFront(self.confirmLogoutBackgroundView)
-
+        self.coverView?.isUserInteractionEnabled = false
         self.coverView = coverView
-        UIView.animate(withDuration: 0.13) {
+        UIView.animate(withDuration: 0.3) {
             self.coverView?.backgroundColor = OVERLAY_COLOR
         }
     }

@@ -15,6 +15,9 @@ struct HackerModel {
     var name: String = ""
     var points: Int = 0
     
+    var pointsGroup: String = "Unassigned"
+    var foodGroup: String = "Unassigned"
+    
     init(uuid: HackerUUID) {
         self.uuid = uuid
     }

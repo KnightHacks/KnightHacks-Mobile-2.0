@@ -102,6 +102,10 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         pointsLabel.layer.cornerRadius = 15
         pointsLabel.clipsToBounds = true
         pointsLabel.layoutIfNeeded()
+        
+        if let image = UserDefaultsHolder.getProfileImage() {
+            profilePictureButton.setImage(image, for: .normal)
+        }
     }
     
     private func setupSettingsBackgroundAndTable() {
@@ -193,7 +197,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     }
     
     @IBAction func profilePictureButtonClicked(_ sender: Any) {
-        presentCameraPickerViewController()
+        showUIImagePickerControllerActionSheet()
     }
     
     @IBAction func QRDisplayCancelTapped(_ sender: Any) {
@@ -205,12 +209,6 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         self.view.isUserInteractionEnabled = false
         
         viewModel.logoutHacker { (_) in
-//            guard didLogout else {
-//                self.view.isUserInteractionEnabled = true
-//                self.activityIndicator.stopAnimating()
-//                return
-//            }
-//
             self.view.isUserInteractionEnabled = true
             UserDefaultsHolder.clearHackerData()
             self.activityIndicator.stopAnimating()

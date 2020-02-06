@@ -12,6 +12,7 @@ internal class LiveUpdatesTableViewController: NavigationBarTableViewController,
     
     internal static let identifier: String = "LiveUpdatesTableViewController"
     
+    private let generator = UIImpactFeedbackGenerator(style: .light)
     private let liveCountDownViewHeight: CGFloat = 130
     
     private var liveCountDownView: LiveCountdownView!
@@ -110,6 +111,7 @@ internal class LiveUpdatesTableViewController: NavigationBarTableViewController,
     }
     
     @objc private func fetchNewUpdates() {
+        generator.impactOccurred()
         self.viewModel.fetchRecent()
     }
 }

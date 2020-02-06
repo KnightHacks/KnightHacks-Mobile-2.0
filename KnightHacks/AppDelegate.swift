@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     public var applicationFilters: [String:[FilterMenuModel]] = [:]
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        overrideDarkMode()
         FirebaseApp.configure()
         applicationWillOverrideUI()
         updateApplicationFilters()
@@ -52,6 +53,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     // MARK: - UI Setup
+    
+    func overrideDarkMode() {
+        #if compiler(>=5.1)
+        if #available(iOS 13.0, *) {
+            // Always adopt a light interface style.
+            window?.overrideUserInterfaceStyle = .light
+        }
+        #endif
+    }
     
     func updateApplicationFilters() {
         FirebaseRequestSingleton<FilterDictionaryModel>().makeRequest(endpoint: .filters) { (filters) in

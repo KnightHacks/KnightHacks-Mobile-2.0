@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupsTableViewController: NavigationBarViewController, NavigationBarViewControllerExtension {
+class GroupsTableViewController: NavigationBarTableViewController, NavigationBarViewControllerExtension {
     
     internal static let identifier: String = "GroupsTableViewController"
     
@@ -22,6 +22,8 @@ class GroupsTableViewController: NavigationBarViewController, NavigationBarViewC
         self.updateNavigationTitle()
         self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
     }
+    
+    override public func willMove(toParent parent: UIViewController?) { }
     
     private func updateNavigationTitle() {
         self.navigationItem.title = "Groups"

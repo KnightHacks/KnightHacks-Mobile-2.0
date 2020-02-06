@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R1j-gj-Cpt">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R1j-gj-Cpt">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -559,13 +561,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zkE-mf-s8h">
                                                             <rect key="frame" x="45" y="11.333333333333332" width="268" height="40.666666666666671"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ku5-Ar-zBa">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ku5-Ar-zBa">
                                                                     <rect key="frame" x="0.0" y="0.0" width="268" height="20.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNF-1P-dkh">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNF-1P-dkh">
                                                                     <rect key="frame" x="0.0" y="20.333333333333336" width="268" height="20.333333333333336"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -889,7 +891,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to logout?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTH-Ff-kFb">
-                                        <rect key="frame" x="32.333333333333343" y="40.333333333333371" width="310.33333333333326" height="24.666666666666671"/>
+                                        <rect key="frame" x="38" y="39.666666666666629" width="299.33333333333331" height="25.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1193,48 +1195,18 @@
             <point key="canvasLocation" x="3433" y="1484"/>
         </scene>
         <!--Groups Table View Controller-->
-        <scene sceneID="u80-we-Tlx">
-            <objects>
-                <viewController restorationIdentifier="GroupsTableViewController" storyboardIdentifier="GroupsTableViewController" id="KZB-P9-B62" customClass="GroupsTableViewController" customModule="KnightHacks" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6TV-SM-mHJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmX-ty-X3j">
-                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
-                                <connections>
-                                    <segue destination="wI7-AI-kK9" kind="embed" id="eCP-qm-jkD"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.3411764706" green="0.33333333329999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="RmX-ty-X3j" firstAttribute="leading" secondItem="PBK-Ln-0Gm" secondAttribute="leading" id="6He-if-WUW"/>
-                            <constraint firstItem="PBK-Ln-0Gm" firstAttribute="trailing" secondItem="RmX-ty-X3j" secondAttribute="trailing" id="dLE-f8-3co"/>
-                            <constraint firstItem="RmX-ty-X3j" firstAttribute="top" secondItem="PBK-Ln-0Gm" secondAttribute="top" id="h0H-zT-Tya"/>
-                            <constraint firstItem="PBK-Ln-0Gm" firstAttribute="bottom" secondItem="RmX-ty-X3j" secondAttribute="bottom" constant="-34" id="zmi-OZ-ytK"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="PBK-Ln-0Gm"/>
-                    </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="2pX-kR-n9r"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Apg-Tl-VSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3682" y="732"/>
-        </scene>
-        <!--Table View Controller-->
         <scene sceneID="jk1-YC-CpI">
             <objects>
-                <tableViewController id="wI7-AI-kK9" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GroupsTableViewController" id="wI7-AI-kK9" customClass="GroupsTableViewController" customModule="KnightHacks" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ufI-xr-1h9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
                             <tableViewSection id="uVP-U1-ogt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="hv7-9O-G8w" customClass="GroupsTableViewCell" customModule="KnightHacks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hv7-9O-G8w" id="1M6-KY-SCl">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -1255,7 +1227,6 @@
                                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="kxd-jn-gCf"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="S.S. Anne" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYU-TY-kZK">
@@ -1292,7 +1263,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="7xt-sj-tGw" customClass="GroupsTableViewCell" customModule="KnightHacks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="118" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="90" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7xt-sj-tGw" id="rJo-0t-x2E">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -1313,7 +1284,6 @@
                                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="yWj-0d-qLx"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Angry Vegans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZM9-gl-6aB">
@@ -1360,51 +1330,21 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNJ-Z7-8pD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4482" y="732"/>
+            <point key="canvasLocation" x="-3214" y="732"/>
         </scene>
         <!--Notifications Table View Controller-->
-        <scene sceneID="ovc-EG-r8y">
-            <objects>
-                <viewController restorationIdentifier="NotificationsTableViewController" storyboardIdentifier="NotificationsTableViewController" id="vVB-SG-nn4" customClass="NotificationsTableViewController" customModule="KnightHacks" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ulx-D9-NSw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVe-8l-COm">
-                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
-                                <connections>
-                                    <segue destination="iRY-fw-Jd4" kind="embed" id="74d-vI-bqP"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.3411764706" green="0.33333333329999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="VVe-8l-COm" firstAttribute="leading" secondItem="8nT-l1-T53" secondAttribute="leading" id="8u8-AN-Hrq"/>
-                            <constraint firstItem="8nT-l1-T53" firstAttribute="trailing" secondItem="VVe-8l-COm" secondAttribute="trailing" id="NiT-ce-fCM"/>
-                            <constraint firstItem="VVe-8l-COm" firstAttribute="top" secondItem="8nT-l1-T53" secondAttribute="top" id="Zz2-Ks-u5a"/>
-                            <constraint firstItem="8nT-l1-T53" firstAttribute="bottom" secondItem="VVe-8l-COm" secondAttribute="bottom" constant="-34" id="ijH-SQ-OtM"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="8nT-l1-T53"/>
-                    </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Xcv-OZ-biZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IS1-eh-pYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2127.1999999999998" y="731.5270935960591"/>
-        </scene>
-        <!--Table View Controller-->
         <scene sceneID="kyt-2i-mJG">
             <objects>
-                <tableViewController id="iRY-fw-Jd4" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NotificationsTableViewController" id="iRY-fw-Jd4" customClass="NotificationsTableViewController" customModule="KnightHacks" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jeO-Mt-FCd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
                             <tableViewSection id="7ga-DA-45C">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="ISS-jx-eJu" customClass="NotificationTableViewCell" customModule="KnightHacks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ISS-jx-eJu" id="ojr-lr-JEX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -1425,7 +1365,6 @@
                                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="Wt2-A3-nTr"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications for scheduled events." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZr-Zr-sLd">
@@ -1482,7 +1421,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Ler-ak-Hgo" customClass="NotificationTableViewCell" customModule="KnightHacks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="118" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="90" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ler-ak-Hgo" id="d0u-1U-nR8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -1503,7 +1442,6 @@
                                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="YVq-Gi-wFx"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="All announcements related to food." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0I-ri-d3Y">
@@ -1560,7 +1498,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="9Ll-by-oc1" customClass="NotificationTableViewCell" customModule="KnightHacks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="208" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="180" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Ll-by-oc1" id="LSF-2s-oc5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
@@ -1581,7 +1519,6 @@
                                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="5Tl-Ol-Ne9"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Notifications for your safety." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p42-1g-qoT">
@@ -1648,7 +1585,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3V-nI-ah8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2894" y="715"/>
+            <point key="canvasLocation" x="-2258" y="732"/>
         </scene>
     </scenes>
     <resources>

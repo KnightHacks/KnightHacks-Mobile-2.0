@@ -166,13 +166,13 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         case .manualLogin:
             showAlternativeLogin()
             return
+        case .navigateNextViewController(let nextViewControllerStoryboardID):
+            pushNextViewController(nextViewControllerStoryboardID)
         case .presentQRCode:
             presentQRDisplay()
             return
         case .logout:
             logoutUser()
-            return
-        default:
             return
         }
     }
@@ -190,6 +190,11 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         let nextViewController = storyboard.instantiateViewController(withIdentifier: QRScannerViewController.identifier)
         nextViewController.modalTransitionStyle = .crossDissolve
         self.present(nextViewController, animated: true, completion: nil)
+    }
+    
+    private func pushNextViewController(_ storyboardID: String) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: storyboardID)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func presentQRDisplay() {

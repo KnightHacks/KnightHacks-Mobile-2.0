@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationsTableViewController: NavigationBarViewController, NavigationBarViewControllerExtension {
+class NotificationsTableViewController: NavigationBarTableViewController, NavigationBarViewControllerExtension {
     
     internal static let identifier: String = "NotificationsTableViewController"
     
@@ -22,6 +22,8 @@ class NotificationsTableViewController: NavigationBarViewController, NavigationB
         self.updateNavigationTitle()
         self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
     }
+    
+    override public func willMove(toParent parent: UIViewController?) { }
     
     private func updateNavigationTitle() {
         self.navigationItem.title = "Notifications"

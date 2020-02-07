@@ -754,10 +754,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="290"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="b7K-JX-hlG">
-                                        <rect key="frame" x="84.666666666666686" y="68.666666666666686" width="206" height="153"/>
+                                        <rect key="frame" x="142.66666666666666" y="68.666666666666686" width="90" height="153"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZb-Aw-LVW" userLabel="Profile Picture Button">
-                                                <rect key="frame" x="57.999999999999986" y="0.0" width="90.000000000000014" height="90"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                                 <color key="backgroundColor" red="0.1570722058" green="0.17859484370000001" blue="0.2892409581" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="3eS-wc-4X7"/>
@@ -767,14 +767,14 @@
                                                     <action selector="profilePictureButtonClicked:" destination="Qh0-oB-9Ji" eventType="touchUpInside" id="IiS-aT-ih3"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johnny Namington" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScW-2g-cgL">
-                                                <rect key="frame" x="0.0" y="94.999999999999986" width="206" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScW-2g-cgL">
+                                                <rect key="frame" x="36.333333333333343" y="94.999999999999986" width="17" height="29"/>
                                                 <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="xwc-cD-IrB">
-                                                <rect key="frame" x="60.333333333333329" y="129" width="84.999999999999986" height="24"/>
+                                                <rect key="frame" x="2.3333333333333428" y="129" width="85" height="24"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="BAa-Up-vEW"/>

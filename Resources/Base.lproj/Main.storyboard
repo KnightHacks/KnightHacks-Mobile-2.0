@@ -1582,6 +1582,11 @@
                             <outlet property="delegate" destination="iRY-fw-Jd4" id="d0B-03-RWd"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="emergencyNotificationSwitch" destination="UYo-fJ-Pzl" id="bP8-pc-Gih"/>
+                        <outlet property="foodNotificationSwitch" destination="XRm-UX-RLp" id="VWp-eW-Tfv"/>
+                        <outlet property="generalNotificationSwitch" destination="YP5-SY-MDf" id="0rF-9w-e9E"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3V-nI-ah8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

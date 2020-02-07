@@ -16,9 +16,18 @@ public class HackerFirebaseRequestSingleton {
     static func getCompleteHackerData(input: HackerModel, completion: @escaping (HackerModel) -> Void) {
         databaseReference.child("administrative_fields").queryOrdered(byChild: "publicUuid").queryEqual(toValue: input.uuid.publicUUID).observeSingleEvent(of: .value) { (snapshot) in
             DispatchQueue.main.async {
-                guard let options = snapshot.value as? [String: Any], let value = options.first?.value as? [String: Any] else {
+                guard let options = snapshot.value as? [String: Any] else {
                     completion(input)
                     return
+                }
+                
+                guard let value = options.first?.value as? [String: Any] else {
+                    completion(input)
+                    return
+                }
+                
+                if let key = options.first?.key {
+                    setNotificationToken(key: key, user: value)
                 }
                 
                 var output = input
@@ -42,6 +51,14 @@ public class HackerFirebaseRequestSingleton {
                     completion(completeOutput)
                 })
             }
+        }
+    }
+    
+    static func setNotificationToken(key: String, user: [String: Any]) {
+        if let appdelegate = UIApplication.shared.delegate as? AppDelegate {
+            var newUserData = user
+            newUserData["notificationToken"] = appdelegate.token
+            databaseReference.child("administrative_fields").child(key).setValue(newUserData)
         }
     }
     

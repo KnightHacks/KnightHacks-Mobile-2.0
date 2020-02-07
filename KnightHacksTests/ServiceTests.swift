@@ -144,4 +144,15 @@ class ServiceTests: XCTestCase {
         
         wait(for: [expectation], timeout: 20)
     }
+    
+    func testGetEventEndTime() {
+        let expectation = XCTestExpectation(description: "Cycle complete")
+        
+        HackerFirebaseRequestSingleton.getEndTime { (endDate) in
+            XCTAssertNotNil(endDate)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 20)
+    }
 }

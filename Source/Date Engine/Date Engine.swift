@@ -33,6 +33,10 @@ public struct DateEngine {
         formatter.dateFormat = format.rawValue
     }
     
+    public func setDateFormat(_ string: String) {
+        formatter.dateFormat = string
+    }
+    
     public func getDate(from string: String) -> Date? {
         return formatter.date(from: string)
     }

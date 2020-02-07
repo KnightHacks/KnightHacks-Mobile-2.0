@@ -36,7 +36,11 @@ internal class LiveUpdatesTableViewController: NavigationBarTableViewController,
         self.viewModel.fetchRecent()
         self.add(navigationController: navigationController, and: navigationItem, with: BACKGROUND_COLOR)
         
-        self.liveCountDownView.targetEndDate = Date(timeIntervalSinceNow: 45) // dummy time
+        if let appdelegate = UIApplication.shared.delegate as? AppDelegate, let endDate = appdelegate.eventEndTime {
+            self.liveCountDownView.targetEndDate = endDate
+        } else {
+            self.liveCountDownView.targetEndDate = Date(timeIntervalSinceNow: -1)
+        }
     }
     
     private func initLiveCountDown() {

@@ -219,6 +219,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
             self.activityIndicator.stopAnimating()
             
             self.updateView()
+            self.profilePictureButton.setImage(nil, for: .normal)
             self.hideConfirmLogoutPanel()
             self.isUserLoggedIn = false
         }

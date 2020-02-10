@@ -12,7 +12,7 @@ enum SettingsMenuModelFunction {
     case automaticLogin
     case manualLogin
     case presentQRCode
-    case navigateNextViewController
+    case navigateNextViewController(String)
     case logout
 }
 

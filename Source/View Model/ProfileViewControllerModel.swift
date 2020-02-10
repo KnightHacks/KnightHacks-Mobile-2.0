@@ -13,13 +13,13 @@ internal class ProfileViewControllerModel {
     private let nonActiveSessionMenuItems = [
         SettingsMenuModel(function: .automaticLogin, title: "Scan QR Code to Login", imageName: "profile-menu-qr"),
         SettingsMenuModel(function: .manualLogin, title: "Enter ID to Login", imageName: "profile-menu-code"),
-        SettingsMenuModel(function: .navigateNextViewController, title: "My Notification Settings", imageName: "profile-menu-notifications")
+        SettingsMenuModel(function: .navigateNextViewController("NotificationsTableViewController"), title: "My Notification Settings", imageName: "profile-menu-notifications")
     ]
     
     private let activeSessionMenuItems = [
         SettingsMenuModel(function: .presentQRCode, title: "Show my QR Code", imageName: "profile-menu-qr"),
-        SettingsMenuModel(function: .navigateNextViewController, title: "My Groups", imageName: "profile-menu-groups"),
-        SettingsMenuModel(function: .navigateNextViewController, title: "My Notification Settings", imageName: "profile-menu-notifications"),
+        SettingsMenuModel(function: .navigateNextViewController("GroupsTableViewController"), title: "My Groups", imageName: "profile-menu-groups"),
+        SettingsMenuModel(function: .navigateNextViewController("NotificationsTableViewController"), title: "My Notification Settings", imageName: "profile-menu-notifications"),
         SettingsMenuModel(function: .logout, title: "Logout", imageName: "profile-menu-logout")
     ]
     

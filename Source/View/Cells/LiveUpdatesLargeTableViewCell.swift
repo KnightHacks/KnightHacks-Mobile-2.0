@@ -35,12 +35,12 @@ internal class LiveUpdatesLargeTableViewCell: UITableViewCell {
                 return
             }
             
+            mainImageView.image = nil
             ImageRequestSingleton.firebaseGetImage(reference: url) { (image) in
                 guard let image = image else {
                     self.mainImageView.image = UIImage(named: "kh-blue")
                     return
                 }
-                
                 self.mainImageView.image = image
             }
         }

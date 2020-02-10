@@ -36,10 +36,12 @@ internal class WorkshopTableViewCell: UITableViewCell {
             }
             
             guard let url = model.imageURL else { return }
+            self.workshopImageView.image = nil
             ImageRequestSingleton.firebaseGetImage(reference: url) { (image) in
                 if let image = image {
                     self.workshopImageView.image = image
                 } else {
+                    self.workshopImageView.image = UIImage(named: "knight_hacks_gold_image")
                     print("couldnt fetch image")
                 }
             }

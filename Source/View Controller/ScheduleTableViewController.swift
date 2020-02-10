@@ -85,16 +85,23 @@ internal class ScheduleTableViewController: NavigationBarViewController, Navigat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: MapViewController.identifier) as? MapViewController
-            else {
-                print("ERROR: View controller not found")
-                return
+        guard let mapViewController = self.storyboard?.instantiateViewController(withIdentifier: MapViewController.identifier) as? MapViewController else {
+            print("ERROR: View controller not found")
+            return
         }
         
-        // TO DO: Pass map image url to mapViewController
-        //let mapImageURL = viewModel.viewContent[indexPath.section][indexPath.row].mapImage
-        //mapViewController.setImage(mapImageURL)
+        guard
+            indexPath.section < viewModel.viewContent.count,
+            indexPath.row < viewModel.viewContent[indexPath.section].count
+        else {
+            return
+        }
         
+        guard let mapURL = viewModel.viewContent[indexPath.section][indexPath.row].mapURL else {
+            return
+        }
+        
+        mapViewController.setMapImage(mapURL)
         present(mapViewController, animated: true, completion: nil)
     }
     

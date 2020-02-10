@@ -18,6 +18,7 @@ internal struct ScheduleModel: HeaderDataSource, FilterDataSource, Comparable, D
     
     enum Keys: String {
         case title
+        case mapUrl
         case location
         case eventType
         case startTime
@@ -30,6 +31,7 @@ internal struct ScheduleModel: HeaderDataSource, FilterDataSource, Comparable, D
     var time: String
     var header: String
     var date: Date
+    var mapURL: String?
     
     init(title: String, location: String, time: String, header: String, date: Date, filters: [FilterMenuModel]) {
         self.title = title
@@ -58,6 +60,10 @@ internal struct ScheduleModel: HeaderDataSource, FilterDataSource, Comparable, D
         self.header = DateEngine(format: .dayMonth).getString(of: self.date, as: .dayMonth)
         self.time = DateEngine(format: .dayMonth).getString(of: self.date, as: .hourColonMinuteMeridian)
         self.filters = []
+        
+        if let mapURL = dataRecieved[Keys.mapUrl.rawValue] as? String {
+            self.mapURL = mapURL
+        }
         
         if let appdelegate = UIApplication.shared.delegate as? AppDelegate,
             let viewFilters = appdelegate.applicationFilters[ScheduleTableViewControllerModel.filterType] {

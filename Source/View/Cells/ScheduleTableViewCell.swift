@@ -26,11 +26,10 @@ internal class ScheduleTableViewCell: UITableViewCell {
             locationLabel.text = model.location
             mapIndicator.isHidden = true
             
-            // TO DO: Enable functionality by removing comments after map images are added to database
             // Shows map indicator if map is available
-            //if model.imageURL != nil {
-            //    mapIndicator.isHidden = false
-            //}
+            if model.mapURL != nil {
+                mapIndicator.isHidden = false
+            }
         }
     }
     

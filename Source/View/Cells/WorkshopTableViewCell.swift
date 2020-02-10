@@ -30,12 +30,11 @@ internal class WorkshopTableViewCell: UITableViewCell {
             mapIndicator.isHidden = true
             addTags(model.filters)
             
-            // TO DO: Enable functionality by removing comments after map images are added to database
             // Shows map indicator if map is available
-            //if model.imageURL != nil {
-            //    mapIndicator.isHidden = false
-            //}
-                
+            if model.mapURL != nil {
+                mapIndicator.isHidden = false
+            }
+            
             guard let url = model.imageURL else { return }
             ImageRequestSingleton.firebaseGetImage(reference: url) { (image) in
                 if let image = image {

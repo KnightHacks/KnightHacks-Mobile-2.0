@@ -98,10 +98,18 @@ internal class WorkshopTableViewController: NavigationBarTableViewController, Na
                 return
             }
         
-        // TO DO: Pass map image url to mapViewController
-        //let mapImageURL = viewModel.viewContent[indexPath.section][indexPath.row].mapImage
-        //mapViewController.setImage(mapImageURL)
+        guard
+            indexPath.section < viewModel.viewContent.count,
+            indexPath.row < viewModel.viewContent[indexPath.section].count
+        else {
+            return
+        }
         
+        guard let mapURL = viewModel.viewContent[indexPath.section][indexPath.row].mapURL else {
+            return
+        }
+        
+        mapViewController.setMapImage(mapURL)
         present(mapViewController, animated: true, completion: nil)
     }
 }

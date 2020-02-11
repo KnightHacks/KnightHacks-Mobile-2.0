@@ -99,7 +99,15 @@ internal class ProfileViewControllerModel {
     }
     
     internal func getHackerInfo(completion: @escaping (Bool) -> Void) {
-        completion(true)
+        guard let model = hackerInfo else {
+            completion(false)
+            return
+        }
+        
+        HackerFirebaseRequestSingleton.getCompleteHackerData(input: model) { (completeModel) in
+            self.hackerInfo = completeModel
+            completion(true)
+        }
     }
     
     // Credit: https://www.hackingwithswift.com/example-code/media/how-to-create-a-qr-code

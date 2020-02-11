@@ -15,17 +15,18 @@ internal class MapViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var mapImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var mapURL: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mapImage.image = UIImage(named: "map")
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 5.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.mapImage.image = nil
+        self.loadImage()
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
@@ -38,10 +39,17 @@ internal class MapViewController: UIViewController, UIScrollViewDelegate {
         return mapImage
     }
     
-    func setMapImage(_ mapImageURL: String) {
-        ImageRequestSingleton.firebaseGetImage(reference: mapImageURL) { (image) in
+    func loadImage() {
+        guard let mapURL = self.mapURL else {
+            return
+        }
+        ImageRequestSingleton.firebaseGetImage(reference: mapURL) { (image) in
             self.mapImage.image = image
         }
+    }
+    
+    func setMapImage(_ mapImageURL: String) {
+        self.mapURL = mapImageURL
     }
     
     @IBAction func closeButton(_ sender: Any) {

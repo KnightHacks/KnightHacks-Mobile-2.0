@@ -28,6 +28,21 @@ internal class SponsorsTableViewController: NavigationBarTableViewController, Na
         self.colorUpper(view: tableView, with: BACKGROUND_COLOR)
         self.filterCollectionView = addFilterCollectionView(to: tableView, datasource: self.viewModel)
         self.viewModel.filterCollectionView = self.filterCollectionView
+        
+        // disable filter collection view
+        self.tableView.tableHeaderView = makeTemporaryHeaderCover()
+    }
+    
+    private func makeTemporaryHeaderCover() -> UIView {
+        let diffPoint: CGFloat = 18
+        let height: CGFloat = 30
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: height))
+        let bottomLayerView = UIView(frame: CGRect(x: 0, y: diffPoint, width: self.view.frame.width, height: height - diffPoint))
+        
+        view.backgroundColor = BACKGROUND_COLOR
+        bottomLayerView.backgroundColor = .white
+        view.addSubview(bottomLayerView)
+        return view
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     public var token: String = ""
     public var applicationFilters: [String:[FilterMenuModel]] = [:]
+    public var eventEndTime: Date? = nil
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         overrideDarkMode()
@@ -25,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         updateApplicationFilters()
         setupNotifications(application)
         removeNotificationBadge(application)
+        
+        getEventEndTime()
         startLaunchAnimation()
         UIImage.setLimit(byteCount: 26214400)
         return true
@@ -50,6 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // Application Variables
+    
+    func getEventEndTime() {
+        HackerFirebaseRequestSingleton.getEndTime { (endTime) in
+            if let date = endTime {
+                self.eventEndTime = date
+            }
+        }
     }
     
     // MARK: - UI Setup

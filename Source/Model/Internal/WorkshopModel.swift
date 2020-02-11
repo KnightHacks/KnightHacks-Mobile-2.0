@@ -23,6 +23,7 @@ internal struct WorkshopModel: HeaderDataSource, FilterDataSource, DictionaryCod
         case description
         case endTime
         case name
+        case mapUrl
         case picture
         case prerequisites
         case skillLevel
@@ -35,6 +36,7 @@ internal struct WorkshopModel: HeaderDataSource, FilterDataSource, DictionaryCod
     var time: String
     var title: String
     var header: String
+    var mapURL: String?
     var imageURL: String?
     var description: String
     var filters: [FilterMenuModel]
@@ -70,6 +72,10 @@ internal struct WorkshopModel: HeaderDataSource, FilterDataSource, DictionaryCod
         self.header = DateEngine(format: .dayMonth).getString(of: self.date, as: .dayMonth)
         self.time = DateEngine(format: .dayMonth).getString(of: self.date, as: .hourColonMinuteMeridian)
         self.filters = []
+        
+        if let mapURL = dataRecieved[Keys.mapUrl.rawValue] as? String {
+            self.mapURL = mapURL
+        }
         
         if let appdelegate = UIApplication.shared.delegate as? AppDelegate,
             let viewFilters = appdelegate.applicationFilters[WorkshopTableViewControllerModel.filterType] {

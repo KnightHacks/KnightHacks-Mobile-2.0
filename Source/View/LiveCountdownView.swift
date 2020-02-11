@@ -72,11 +72,14 @@ public class LiveCountdownView: UIView {
         contentView.frame = bounds
         contentView.backgroundColor = BACKGROUND_COLOR
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        isLiveIndicatorLabel.backgroundColor = UIColor.gray
     }
     
     private func start(date: Date) {
-        isLive = true
         timeToEnd = Int(date.timeIntervalSince1970 - Date().timeIntervalSince1970)
+        if timeToEnd > 0 {
+            isLive = true
+        }
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: isLive ?? false)
     }
     

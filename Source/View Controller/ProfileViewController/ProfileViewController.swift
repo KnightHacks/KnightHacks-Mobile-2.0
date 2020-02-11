@@ -178,7 +178,10 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     }
     
     private func updateView() {
-        
+        profileNameLabel.text = viewModel.hackerInfo?.name ?? "..."
+        if let points = viewModel.hackerInfo?.points {
+            pointsLabel.text = "\(points) \(points == 1 ? "point" : "points")"
+        }
     }
     
     private func logoutUser() {
@@ -194,6 +197,11 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     
     private func pushNextViewController(_ storyboardID: String) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: storyboardID)
+        if let vc = vc as? GroupsTableViewController {
+            vc.foodGroup = self.viewModel.hackerInfo?.foodGroup ?? "Unassigned"
+            vc.pointsGroup = self.viewModel.hackerInfo?.pointsGroup ?? "Unassigned"
+        }
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -219,6 +227,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
             self.activityIndicator.stopAnimating()
             
             self.updateView()
+            self.profilePictureButton.setImage(nil, for: .normal)
             self.hideConfirmLogoutPanel()
             self.isUserLoggedIn = false
         }

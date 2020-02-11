@@ -144,4 +144,27 @@ class ServiceTests: XCTestCase {
         
         wait(for: [expectation], timeout: 20)
     }
+    
+    func testGetEventEndTime() {
+        let expectation = XCTestExpectation(description: "Cycle complete")
+        
+        HackerFirebaseRequestSingleton.getEndTime { (endDate) in
+            XCTAssertNotNil(endDate)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 20)
+    }
+    
+    func testGettingHackerData() {
+        let expectation = XCTestExpectation(description: "Cycle complete")
+        let model = HackerModel(uuid: HackerUUID(publicUUID: "wordy-wordy-passwordy", authCode: "ae076010-4f7c-48f4-96d0-1798169ada4f"))
+        
+        HackerFirebaseRequestSingleton.getCompleteHackerData(input: model) { (model) in
+            print(model)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 20)
+    }
 }

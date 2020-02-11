@@ -12,6 +12,9 @@ class GroupsTableViewController: NavigationBarTableViewController, NavigationBar
     
     internal static let identifier: String = "GroupsTableViewController"
     
+    var pointsGroup: String = "Unassigned"
+    var foodGroup: String = "Unassigned"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .never
@@ -38,5 +41,17 @@ class GroupsTableViewController: NavigationBarTableViewController, NavigationBar
         }
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let groupCell = cell as? GroupsTableViewCell else {
+            return
+        }
+        
+        if indexPath.row == 0 {
+            groupCell.detailsLabel.text = pointsGroup
+        } else {
+            groupCell.detailsLabel.text = foodGroup
+        }
     }
 }

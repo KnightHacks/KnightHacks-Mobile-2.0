@@ -102,8 +102,13 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
         pointsLabel.layer.cornerRadius = 15
         pointsLabel.clipsToBounds = true
         pointsLabel.layoutIfNeeded()
-        
-        if let image = UserDefaultsHolder.getProfileImage() {
+        setupProfilePictureImage()
+    }
+    
+    private func setupProfilePictureImage() {
+        if
+            let privateUUID = self.viewModel.hackerInfo?.privateUUID,
+            let image = UserDefaultsHolder.getProfileImage(privateUUID: privateUUID) {
             profilePictureButton.setImage(image, for: .normal)
         }
     }
@@ -178,6 +183,7 @@ internal class ProfileViewController: NavigationBarViewController, NavigationBar
     }
     
     private func updateView() {
+        setupProfilePictureImage()
         profileNameLabel.text = viewModel.hackerInfo?.name ?? "..."
         if let points = viewModel.hackerInfo?.points {
             pointsLabel.text = "\(points) \(points == 1 ? "point" : "points")"

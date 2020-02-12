@@ -23,7 +23,7 @@ internal struct WorkshopModel: HeaderDataSource, FilterDataSource, DictionaryCod
         case description
         case endTime
         case name
-        case mapUrl
+        case mapURL
         case picture
         case prerequisites
         case skillLevel
@@ -73,7 +73,7 @@ internal struct WorkshopModel: HeaderDataSource, FilterDataSource, DictionaryCod
         self.time = DateEngine(format: .dayMonth).getString(of: self.date, as: .hourColonMinuteMeridian)
         self.filters = []
         
-        if let mapURL = dataRecieved[Keys.mapUrl.rawValue] as? String {
+        if let mapURL = dataRecieved[Keys.mapURL.rawValue] as? String {
             self.mapURL = mapURL
         }
         

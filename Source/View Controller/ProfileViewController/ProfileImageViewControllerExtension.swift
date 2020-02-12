@@ -44,7 +44,10 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
             profilePictureButton.tintColor = .clear
             profilePictureButton.setImage(imageSelected, for: .normal)
             profilePictureButton.imageView?.contentMode = .scaleAspectFill
-            _ = UserDefaultsHolder.set(profileImage: imageSelected)
+            
+            if let privateUUID = self.viewModel.hackerInfo?.privateUUID {
+                _ = UserDefaultsHolder.set(profileImage: imageSelected, privateUUID: privateUUID)
+            }
         }
         
         dismiss(animated: true, completion: nil)

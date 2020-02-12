@@ -19,6 +19,8 @@ struct UserDefaultsHolder {
     private static let authCodeKey: String = "authCodeKey"
     private static let profileImageKey: String = "profileImage"
     
+    private static var storedProfilePictures: [String: Data]?
+    
     enum RequestKey: String {
         case isSubscribedToGeneralNotifications
         case isSubscribedToFoodNotifications
@@ -58,18 +60,47 @@ struct UserDefaultsHolder {
         UserDefaults.standard.set(value, forKey: key.rawValue)
     }
     
-    static func set(profileImage: UIImage) -> Bool {
+    static private func getUserDefaultsPictureDictionary() -> [String: Data] {
+        guard let dictJson = UserDefaults.standard.data(forKey: profileImageKey) else {
+            return [:]
+        }
+        
+        guard let dict = try? JSONDecoder().decode([String: Data].self, from: dictJson) else {
+            return [:]
+        }
+        
+        return dict
+    }
+    
+    static private func getStoredPictureDictionary() -> [String: Data] {
+        guard let dict = self.storedProfilePictures else {
+            let retrievedDictionary = getUserDefaultsPictureDictionary()
+            self.storedProfilePictures = retrievedDictionary
+            return retrievedDictionary
+        }
+        return dict
+    }
+    
+    static func set(profileImage: UIImage, privateUUID: String) -> Bool {
         guard let data = profileImage.pngData() else {
             return false
         }
         
-        UserDefaults.standard.set(data, forKey: profileImageKey)
+        var newDictionary = getStoredPictureDictionary()
+        newDictionary[privateUUID] = data
+        
+        guard let encodedDictionary = try? JSONEncoder().encode(newDictionary) else {
+            return false
+        }
+        
+        self.storedProfilePictures = newDictionary
+        UserDefaults.standard.set(encodedDictionary, forKey: profileImageKey)
         return true
     }
     
-    static func getProfileImage() -> UIImage? {
+    static func getProfileImage(privateUUID: String) -> UIImage? {
         guard
-            let imageData = UserDefaults.standard.data(forKey: profileImageKey),
+            let imageData = getStoredPictureDictionary()[privateUUID],
             let image = UIImage(data: imageData)
         else {
             return nil

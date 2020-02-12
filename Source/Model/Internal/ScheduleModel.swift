@@ -18,7 +18,7 @@ internal struct ScheduleModel: HeaderDataSource, FilterDataSource, Comparable, D
     
     enum Keys: String {
         case title
-        case mapUrl
+        case mapURL
         case location
         case eventType
         case startTime
@@ -61,7 +61,7 @@ internal struct ScheduleModel: HeaderDataSource, FilterDataSource, Comparable, D
         self.time = DateEngine(format: .dayMonth).getString(of: self.date, as: .hourColonMinuteMeridian)
         self.filters = []
         
-        if let mapURL = dataRecieved[Keys.mapUrl.rawValue] as? String {
+        if let mapURL = dataRecieved[Keys.mapURL.rawValue] as? String {
             self.mapURL = mapURL
         }
         

@@ -116,7 +116,6 @@ internal class QRScannerViewController: UIViewController, AVCaptureMetadataOutpu
     }
     
     private func setupFontOf(_ button: UIButton) {
-        button.titleLabel?.font = PARAGRAPH_FONT
         button.setTitleColor(BACKGROUND_COLOR, for: .normal)
         button.setTitleColor(.black, for: .highlighted)
     }
